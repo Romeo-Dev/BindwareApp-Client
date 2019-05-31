@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-back-button (click)="goBack()" slot="start"></ion-back-button>
+    <ion-title>{{'LOGIN_TITLE'| translate}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid class="ion-padding">
+      <ion-row class="ion-padding">
+        <ion-img src="assets/img/logo.png"></ion-img>
+      </ion-row>
+  <form [formGroup]="loginForm">
+    <ion-row align-items-center>
+      <ion-col size="12" class="ion-margin-bottom">
+    <ion-item no-padding class="animated fadeInUp">
+      <ion-label position="floating">
+        <ion-icon name="contact" slot='start'></ion-icon>{{ 'USERNAME' | translate }}</ion-label>
+      <ion-input color="secondary" type="text" formControlName="username"></ion-input>
+    </ion-item>
+    <p ion-text class="text08" *ngIf="loginForm.get('username').touched && loginForm.get('username').invalid">
+      <ion-text color="danger">{{ 'USERNAME_REQUIRED' | translate }}</ion-text>
+    </p>
+      </ion-col>
+    </ion-row>
+    <ion-row align-items-center>
+      <ion-col>
+    <ion-item no-padding class="animated fadeInUp">
+      <ion-label position="floating">
+        <ion-icon name="lock" slot='start'></ion-icon>{{ 'PASSWORD' | translate }}</ion-label>
+      <ion-input color="secondary" type="password" formControlName="password"></ion-input>
+    </ion-item>
+    <p ion-text class="text08" *ngIf="loginForm.get('password').touched && loginForm.get('password').invalid">
+      <ion-text color="danger">{{ 'PASSWORD_REQUIRED' | translate }}</ion-text>
+    </p>
+      </ion-col>
+    </ion-row>
+    <ion-row align-items-center>
+      <ion-col>
+    <div margin-top="20px">
+      <ion-button icon-left size="medium" expand="full" shape="round" color="tertiary" [disabled]="!loginForm.valid" (click)="onLogin()">
+        <ion-icon name="log-in"></ion-icon>
+        {{ 'LOGIN_BUTTON' | translate }}
+      </ion-button>
+    </div>
+      </ion-col>
+    </ion-row>
+  </form>
+    </ion-grid>
+</ion-content>

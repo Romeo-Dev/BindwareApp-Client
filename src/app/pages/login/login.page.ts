@@ -33,7 +33,7 @@ export class LoginPage implements OnInit {
 
 
   goBack(){
-    this.navCtrl.navigateRoot('home');
+    this.navCtrl.navigateRoot('tabs');
   }
 
   onLogin(){
@@ -47,7 +47,7 @@ export class LoginPage implements OnInit {
     console.log('non stampa'+account);
     if(this.utenteService.login(account)){
       console.log('Login con successo');
-      this.navCtrl.navigateRoot('home');
+      this.navCtrl.navigateRoot('tabs');
     }else {
       this.showLoginError();
     }

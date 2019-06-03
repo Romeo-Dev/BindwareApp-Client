@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {NavController} from '@ionic/angular';
+import {AlertController, NavController} from '@ionic/angular';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Storage} from '@ionic/storage';
 import {Utente} from '../../model/utente.model';
+import {TranslateService} from '@ngx-translate/core';
+import {Account, UtenteService} from '../../services/utente.service';
 
 @Component({
   selector: 'app-login',
@@ -12,16 +14,20 @@ import {Utente} from '../../model/utente.model';
 export class LoginPage implements OnInit {
 
   private loginForm : FormGroup;
-  private utente: Utente;  // TODO: rivedere il model nell aggiunta del servizio rest per utente
+  private utente: Utente;
+  private loginSubTitle: string;
+  private loginTitle: string;
 
-  constructor(private navCtrl: NavController, private formBuilder: FormBuilder,private store: Storage) { }
+  // TODO: rivedere il model nell aggiunta del servizio rest per utente
+
+  constructor(private navCtrl: NavController, private formBuilder: FormBuilder,private store: Storage,private translateService: TranslateService,private alertController: AlertController,private utenteService: UtenteService) { }
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
       username: ['',Validators.compose([Validators.required])],
       password: ['',Validators.compose([Validators.required,Validators.minLength(5)])]
     });
-
+        this.initTranslate();
   }
 
 
@@ -34,11 +40,45 @@ export class LoginPage implements OnInit {
     /*
     ----------------------------------------------
     codice che fa chiamata rest al servizio checkUtente()
+    true: resetto campi e procedo nella mia home da utente loggato
+    false: error chiamo showLoginForm rimango in tale pagina
     ----------------------------------------------*/
-    this.utente = new Utente(this.loginForm.get('username').value, this.loginForm.get('password').value);
-    console.log(this.utente);
-    this.store.set('utente',this.utente);
-    this.navCtrl.navigateRoot('home');
+    const account: Account = this.loginForm.value;
+    console.log('non stampa'+account);
+    if(this.utenteService.login(account)){
+      console.log('Login con successo');
+      this.navCtrl.navigateRoot('home');
+    }else {
+      this.showLoginError();
+    }
+
+
+  }
+
+
+  async showLoginError(){
+    // chiamare tale metodo in onLogin in caso si giunge al ramo else della chiamata rest checkUtente()
+    const alert = await this.alertController.create({
+      header: this.loginTitle,
+      message: this.loginSubTitle,
+      buttons: ['OK']
+    });
+
+    await alert.present();
+  }
+
+  goToRegister(){
+    this.navCtrl.navigateForward('register');
+  }
+
+
+  private initTranslate() {
+    this.translateService.get('LOGIN_ERROR_SUB_TITLE').subscribe((data) => {
+      this.loginSubTitle = data;
+    });
+    this.translateService.get('LOGIN_ERROR_TITLE').subscribe((data) => {
+      this.loginTitle = data;
+    });
   }
 
 }

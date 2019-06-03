@@ -46,5 +46,15 @@
       </ion-col>
     </ion-row>
   </form>
-    </ion-grid>
+      <ion-row align-items-center>
+        <ion-col>
+          <div margin-top="20px">
+            <ion-button icon-left size="medium" expand="full" shape="round" color="tertiary"  (click)="goToRegister()">
+              <ion-icon name="contacts"></ion-icon>
+              {{ 'REGISTER_BUTTON' | translate }}
+            </ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+      </ion-grid>
 </ion-content>

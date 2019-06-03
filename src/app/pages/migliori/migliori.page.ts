@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {NavController} from "@ionic/angular";
 
 @Component({
   selector: 'app-migliori',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MiglioriPage implements OnInit {
 
-  constructor() { }
+  constructor(private navCtrl: NavController) { }
 
   ngOnInit() {
+  }
+
+  goToLogin(){
+    this.navCtrl.navigateForward('login');
   }
 
 }

@@ -30,5 +30,11 @@
   "LANGUAGE": "Lingua",
   "EMAIL_REQUIRED": "Email obbligatoria",
 
-  "DETTAGLIO_NOTIZIA_TITOLO": "Dettaglio Notizia"
+  "DETTAGLIO_NOTIZIA_TITOLO": "Dettaglio Notizia",
+
+  "FORUM_TAB": "Forum",
+  "MIGLIORI_TAB": "Migliori",
+  "RICERCA_TAB": "Ricerca",
+  "ASSETTO_TAB": "Assetto"
+
 }

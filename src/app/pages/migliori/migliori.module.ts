@@ -7,6 +7,8 @@ import { IonicModule } from '@ionic/angular';
 
 import { MiglioriPage } from './migliori.page';
 
+import {TranslateModule} from '@ngx-translate/core';
+
 const routes: Routes = [
   {
     path: '',

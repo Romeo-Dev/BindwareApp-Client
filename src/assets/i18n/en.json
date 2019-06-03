@@ -30,5 +30,10 @@
   "LANGUAGE": "Language",
   "EMAIL_REQUIRED": "Email mandatory",
 
-  "DETTAGLIO_NOTIZIA_TITOLO": "News Detail"
+  "DETTAGLIO_NOTIZIA_TITOLO": "News Detail",
+
+  "FORUM_TAB": "Forum",
+  "MIGLIORI_TAB": "Best Rated",
+  "RICERCA_TAB": "Search",
+  "ASSETTO_TAB": "Assett"
 }

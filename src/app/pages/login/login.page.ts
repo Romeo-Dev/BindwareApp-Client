@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {NavController} from '@ionic/angular';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Storage} from '@ionic/storage';
-import {Utentemodel} from '../../model/utentemodel';
+import {Utente} from '../../model/utente.model';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +12,7 @@ import {Utentemodel} from '../../model/utentemodel';
 export class LoginPage implements OnInit {
 
   private loginForm : FormGroup;
-  private utente: Utentemodel;  // TODO: rivedere il model nell aggiunta del servizio rest per utente
+  private utente: Utente;  // TODO: rivedere il model nell aggiunta del servizio rest per utente
 
   constructor(private navCtrl: NavController, private formBuilder: FormBuilder,private store: Storage) { }
 
@@ -35,7 +35,7 @@ export class LoginPage implements OnInit {
     ----------------------------------------------
     codice che fa chiamata rest al servizio checkUtente()
     ----------------------------------------------*/
-    this.utente = new Utentemodel(this.loginForm.get('username').value, this.loginForm.get('password').value);
+    this.utente = new Utente(this.loginForm.get('username').value, this.loginForm.get('password').value);
     console.log(this.utente);
     this.store.set('utente',this.utente);
     this.navCtrl.navigateRoot('home');

@@ -1,4 +1,4 @@
-export class Utentemodel {
+export class Utente {
     username: string;
     email?: string;
     password: string;

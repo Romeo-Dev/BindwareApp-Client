@@ -19,6 +19,11 @@
   "USERNAME_REQUIRED": "Username required",
   "PASSWORD_REQUIRED": "Password required",
 
+  "CATEGORIES": "Select category",
+  "POSTS": "Posts",
+  "DETAILS": "Details",
+  "CREATED_BY": "Created by",
+
 
   "PROFILO_MENU": "Profile",
   "LOGOUT_MENU": "Logout",

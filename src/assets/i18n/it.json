@@ -21,6 +21,12 @@
   "USERNAME_REQUIRED": "Username obbligatorio",
   "PASSWORD_REQUIRED": "Password obbligatorio",
 
+
+  "CATEGORIES": "Seleziona Categoria",
+  "POSTS": "Post",
+  "DETAILS": "Dettagli",
+  "CREATED_BY": "Creato da",
+
   "PROFILO_MENU": "Profilo",
   "LOGOUT_MENU": "Esci",
   "NOTIZIE_TAB": "Notizie",

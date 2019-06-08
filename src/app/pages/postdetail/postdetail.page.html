@@ -1,0 +1,94 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-back-button slot="start"  (click)="goBack()"></ion-back-button>
+    <ion-title>{{"POST"|translate}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+      <!--cARICO I DATI INERENTI AL SINGOLO POST QUINDI SINGOLA DISCUSSIONE -->
+    <ion-item>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="6">
+            <ion-text color="secondary">
+              <ion-icon name="person" size="medium"></ion-icon> : Utente A
+            </ion-text>
+          </ion-col>
+          <ion-col size="6">
+            <ion-text color="secondary">
+              <ion-icon name="calendar" size="medium"></ion-icon> : YY-MM-GG
+            </ion-text>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  <ion-item>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12"> <ion-text color="primary">
+          <h2>
+          Titolo lorem ipsum verbum panis factumest?????
+          </h2>
+        </ion-text>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">
+          <ion-text color="secondary">
+            <h4>
+          Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32
+          </h4>
+          </ion-text>
+        </ion-col>
+      </ion-row>
+      <div class="flex-items">
+        <ion-row>
+          <ion-col col-6>
+            <h3 float-right>55 <ion-icon  name="arrow-round-up" style="color : #90EE90; font-size: 25px;"></ion-icon></h3>
+          </ion-col>
+          <ion-col col-6>
+            <h3>13 <ion-icon name="arrow-round-down" style="color: #FF0000; font-size: 25px;"></ion-icon></h3>
+          </ion-col>
+        </ion-row>
+      </div>
+    </ion-grid>
+  </ion-item>
+  <!--cARICO I DATI INERENTI AL SINGOLO POST QUINDI SINGOLA DISCUSSIONE -->
+
+  <!-- Iniziano le Card di un commento -->
+
+    <ion-card color="primary" class="ion-margin-top">
+      <ion-card-header>
+        <ion-card-subtitle><ion-text color="tertiary"><ion-icon name="person" size="medium"></ion-icon> : Utente B</ion-text></ion-card-subtitle>
+        <ion-card-subtitle><ion-text color="tertiary"><ion-icon name="calendar" size="medium"></ion-icon> : YY-MM-GG</ion-text></ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content>
+        Keep close to Nature's heart... and break clear away, once in awhile,
+        and climb a mountain or spend a week in the woods. Wash your spirit clean.
+      </ion-card-content>
+    </ion-card>
+
+
+    <ion-card color="primary" class="ion-margin-top">
+      <ion-card-header>
+        <ion-card-subtitle><ion-text color="tertiary"><ion-icon name="person" size="medium"></ion-icon> : Utente B</ion-text></ion-card-subtitle>
+        <ion-card-subtitle><ion-text color="tertiary"><ion-icon name="calendar" size="medium"></ion-icon> : YY-MM-GG</ion-text></ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content>
+        Keep close to Nature's heart... and break clear away, once in awhile,
+        and climb a mountain or spend a week in the woods. Wash your spirit clean.
+      </ion-card-content>
+    </ion-card>
+
+
+  <!-- fab placed to the bottom end -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="tertiary">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>

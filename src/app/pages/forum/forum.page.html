@@ -18,7 +18,7 @@
   </ion-card>
 
     <!-- Insert (click) event che porta in post -->
-  <ion-item detail *ngFor="let category of this.service.getAllCategories() | async" (click)="goToPost(category.nome)">
+  <ion-item detail *ngFor="let category of this.service.getAllCategories() | async" (click)="goToPost(category.id)">
     <ion-label>
       {{category.nome}}
     </ion-label>

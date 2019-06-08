@@ -10,7 +10,7 @@ import {Router} from '@angular/router';
 })
 export class PostPage implements OnInit {
 
-  private categoria: string;
+  private categoria: number;
   constructor(private service: PostService,private navCtrl: NavController, private router: Router) {
 
     this.categoria = this.router.getCurrentNavigation().extras.state.categoria;
@@ -23,5 +23,8 @@ export class PostPage implements OnInit {
 
   goBack(){
     this.navCtrl.back();
+  }
+  goToDetail(){
+    this.navCtrl.navigateForward('postdetail');
   }
 }

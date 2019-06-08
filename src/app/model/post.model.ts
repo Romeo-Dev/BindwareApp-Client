@@ -1,4 +1,5 @@
 import {CategoriaModel} from './categoria.model';
+import {Utente} from './utente.model';
 
 export class PostModel {
     id?: number;
@@ -7,6 +8,7 @@ export class PostModel {
     data: string;
     categoria: CategoriaModel;
     color: string;
+    utente: Utente;
 
     //manca Assetto per il momento
 }

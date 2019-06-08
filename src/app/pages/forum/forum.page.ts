@@ -12,11 +12,11 @@ export class ForumPage implements OnInit {
 
   ngOnInit() {
   }
-goToPost(nome: string){
+goToPost(id: number){
 
   let extras: NavigationExtras = {
     state: {
-      categoria: nome
+      categoria: id
     }
   };
   this.route.navigate(['post'], extras);

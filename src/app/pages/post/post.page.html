@@ -10,7 +10,7 @@
     <ion-card-header>
       <ion-card-subtitle><ion-text color="tertiary">{{post.categoria.nome}}</ion-text></ion-card-subtitle>
       <ion-card-title>{{post.titolo}}</ion-card-title>
-      <ion-card-subtitle><ion-text color="tertiary">{{"CREATED_BY"|translate}} : Nome Utente</ion-text></ion-card-subtitle>
+      <ion-card-subtitle><ion-text color="tertiary">{{"CREATED_BY"|translate}} : {{post.utente.username}}</ion-text></ion-card-subtitle>
       <ion-card-subtitle><ion-text color="tertiary">Data : {{post.data}}</ion-text></ion-card-subtitle>
     </ion-card-header>
 
@@ -23,7 +23,7 @@
         </ion-row>
         <ion-row>
           <ion-col class="ion-align-self-start">
-      <ion-button color="tertiary">{{"DETAILS"|translate}}</ion-button>
+      <ion-button color="tertiary" (click)="goToDetail()">{{"DETAILS"|translate}}</ion-button>
           </ion-col>
           <ion-col  class="ion-align-self-end">
             <ion-button color="secondary">
@@ -35,5 +35,10 @@
     </ion-card-content>
   </ion-card>
 
-
+  <!-- fab placed to the bottom end -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="tertiary">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

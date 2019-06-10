@@ -21,14 +21,12 @@
       {{post.descr|slice: 0:250}} <ion-icon name="barcode" color="tertiary" size="small"></ion-icon>
           </ion-col>
         </ion-row>
-        <ion-row>
-          <ion-col class="ion-align-self-start">
-      <ion-button color="tertiary" (click)="goToDetail()">{{"DETAILS"|translate}}</ion-button>
+        <ion-row class="ion-align-items-center">
+          <ion-col>
+      <ion-button color="tertiary" (click)="goToDetail(post.id)">{{"DETAILS"|translate}}</ion-button>
           </ion-col>
-          <ion-col  class="ion-align-self-end">
-            <ion-button color="secondary">
-      <ion-icon name="star" color="{{post.color}}" size="large"></ion-icon>
-            </ion-button>
+          <ion-col >
+         <h3 float-end><ion-icon name="star" color="{{post.color}}" size="large"></ion-icon></h3>
           </ion-col>
         </ion-row>
       </ion-grid>

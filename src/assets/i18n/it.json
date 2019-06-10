@@ -21,11 +21,14 @@
   "USERNAME_REQUIRED": "Username obbligatorio",
   "PASSWORD_REQUIRED": "Password obbligatorio",
 
+  "DUMMY": "Pagina non disponibile",
+
 
   "CATEGORIES": "Seleziona Categoria",
   "POSTS": "Post",
   "DETAILS": "Dettagli",
   "CREATED_BY": "Creato da",
+  "COMMENTS" : "Commenti",
 
   "PROFILO_MENU": "Profilo",
   "LOGOUT_MENU": "Esci",

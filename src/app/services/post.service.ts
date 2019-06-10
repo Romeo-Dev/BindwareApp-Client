@@ -3,6 +3,7 @@ import {CategoriaModel} from '../model/categoria.model';
 import {Observable, of} from 'rxjs';
 import {PostModel} from '../model/post.model';
 import {Utente} from '../model/utente.model';
+import {CommentiModel} from '../model/commenti.model';
 
 @Injectable({
   providedIn: 'root'
@@ -50,8 +51,8 @@ export class PostService {
 
   //-------------------Utenti che hanno creato un post-----------------------------------
 
-  //-------------------Array di Post Gaming-----------------------------------
-  private postGaming$: PostModel[] =[{
+  //-------------------Array di Post-----------------------------------
+  private postAll$: PostModel[] =[{
     id: 1,
     titolo: "GTX 970 deprecata o ancora abile per giocare ?",
    descr: "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
@@ -85,15 +86,8 @@ export class PostService {
       categoria: this.categories$[0],
       utente: this.utenza$[2],
       color: "light"
-    },
-
-  ];
-  //-------------------Array di Post Gaming-----------------------------------
-
-
-  //-------------------Array di Post Lavoro-----------------------------------
-  private postLavoro$: PostModel[]=[{
-    id: 4,
+    },{
+    id: 8,
     titolo: "Quanta potenza al livello di benchmark mi serve per poter lavorare sul pc?",
     descr: "en an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
     data: "November-2010",
@@ -126,35 +120,131 @@ export class PostService {
     color: "light"
   },
   ];
-  //-------------------Array di Post Lavoro-----------------------------------
+  //-------------------Array di Post----------------------------------
+  //-------------------Array di Commenti-----------------------------------
+  private commenti$: CommentiModel[] = [{
+    id: 1,
+  post: this.postAll$[2],
+  utente: this.utenza$[0],
+  data: "12-06-2012",
+  commento: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute ",
+  },{
+    id: 2,
+    post: this.postAll$[1],
+    utente: this.utenza$[1],
+    data: "10-07-2012",
+    commento: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute ",
+  },{
+    id: 3,
+    post: this.postAll$[1],
+    utente: this.utenza$[0],
+    data: "17-12-2012",
+    commento: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute ",
+  },{
+    id: 4,
+    post: this.postAll$[3],
+    utente: this.utenza$[3],
+    data: "12-12-2012",
+    commento: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute ",
+  },{
+    id: 5,
+    post: this.postAll$[5],
+    utente: this.utenza$[3],
+    data: "01-02-2012",
+    commento: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute ",
+  },{
+    id: 6,
+    post: this.postAll$[5],
+    utente: this.utenza$[0],
+    data: "02-06-2012",
+    commento: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute ",
+  },{
+    id: 7,
+    post: this.postAll$[1],
+    utente: this.utenza$[0],
+    data: "20-06-2012",
+    commento: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute ",
+  },{
+    id: 8,
+    post: this.postAll$[2],
+    utente: this.utenza$[3],
+    data: "25-10-2013",
+    commento: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute ",
+  },{
+    id: 9,
+    post: this.postAll$[3],
+    utente: this.utenza$[0],
+    data: "20-01-2013",
+    commento: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute ",
+  },{
+    id: 10,
+    post: this.postAll$[1],
+    utente: this.utenza$[3],
+    data: "25-12-2013",
+    commento: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute ",
+  }
+];
+
+
+  //-------------------Array di Commenti-----------------------------------
   constructor() { }
-
-
 
   getAllCategories(): Observable<CategoriaModel[]>{
     return of(this.categories$);
   }
 
   //-------------metodi dei post from category
-  getAllPostByCategory(name: number): Observable<PostModel[]> {
-    if (name === this.categories$[0].id) {
-      console.log("categoria selezionata " + this.categories$[0].nome);
-      return this.getAllPostGaming();
-    } else if (name == this.categories$[1].id) {
-      console.log("categoria selezionata " + this.categories$[1].nome);
-      return this.getAllPostLavoro();
-      /* else if che continuo ma faccio solo sti 2 per praticita poiche tale metodo sara sostituito
-      con una chiamata rest che filtrera i post per categoria*/
-    }
-  }
-  getAllPostGaming(): Observable<PostModel[]>{
-    return of(this.postGaming$);
-  }
-  getAllPostLavoro(): Observable<PostModel[]>{
-    return of(this.postLavoro$);
+  getAllPostByCategory(id: number): Observable<PostModel[]> {
+    let localPost: PostModel[] =[];
+
+      for (let entry of this.postAll$){
+        if (id === entry.categoria.id) {
+          localPost.push(entry);
+        }
+      }
+      return of (localPost);
   }
   //-------------metodi dei post from category
 
-  //metodi di Detail Post
+  //-------------------metodi di Detail Post
+
+  getDetailPost(id: number): Observable<PostModel>{
+
+    console.log(id);
+    let singlePost: PostModel;
+
+    for (let entry of this.postAll$) {
+      if (id === entry.id){
+        singlePost = entry;
+        return of (singlePost);
+      }
+
+    }
+
+  }
+  //-------------------metodi di Detail Post
+
+
+  //-------------------metodi commenti by post
+
+
+  getCommentByPost(idPost: number): Observable<CommentiModel[]>{
+    let localComment: CommentiModel[] = [];
+
+    for(let entry of this.commenti$){
+
+      if (idPost === entry.post.id){
+          localComment.push(entry);
+      }
+
+    }
+        if (localComment.length <= 0){
+          console.log("spiacenti nessun commento per questo post");
+          return  null;
+        } else
+          return  of (localComment);
+  }
+
+  //-------------------metodi commenti by post
 
 }

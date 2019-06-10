@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {PostService} from '../../services/post.service';
 import {NavController} from '@ionic/angular';
-import {Router} from '@angular/router';
+import {NavigationExtras, Router} from '@angular/router';
 
 @Component({
   selector: 'app-post',
@@ -24,7 +24,13 @@ export class PostPage implements OnInit {
   goBack(){
     this.navCtrl.back();
   }
-  goToDetail(){
-    this.navCtrl.navigateForward('postdetail');
+  goToDetail(id: number){
+    console.log("Sono nel controller della vista di POST_PAGE");
+    let extras: NavigationExtras = {
+      state: {
+        id: id
+      }
+    };
+    this.router.navigate(['postdetail'], extras);
   }
 }

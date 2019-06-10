@@ -7,6 +7,7 @@ const routes: Routes = [
   { path: 'tabs', loadChildren: './pages/tabs/tabs.module#TabsPageModule' },
   { path: 'post', loadChildren: './pages/post/post.module#PostPageModule' },
   { path: 'postdetail', loadChildren: './pages/postdetail/postdetail.module#PostdetailPageModule' },
+  { path: 'dummy', loadChildren: './pages/dummy/dummy.module#DummyPageModule' },
 
 ];
 

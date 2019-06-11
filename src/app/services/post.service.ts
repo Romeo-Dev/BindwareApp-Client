@@ -4,11 +4,15 @@ import {Observable, of} from 'rxjs';
 import {PostModel} from '../model/post.model';
 import {Utente} from '../model/utente.model';
 import {CommentiModel} from '../model/commenti.model';
+import {FollowerModel} from '../model/follower.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PostService {
+
+
+   public totCommenti: number;
   //-------------------Array di category-----------------------------------
   private categories$: CategoriaModel[] = [{
     id: 1,
@@ -44,7 +48,7 @@ export class PostService {
       username: "Lorenzo"
     },
     {
-      id: 1,
+      id: 3,
       username: "Francesco"
     },
   ];
@@ -92,7 +96,7 @@ export class PostService {
     descr: "en an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
     data: "November-2010",
     categoria: this.categories$[1],
-    utente: this.utenza$[1],
+    utente: this.utenza$[0],
     color: "light"
   },{
     id: 5,
@@ -108,7 +112,7 @@ export class PostService {
     descr: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc..",
     data: "Genuary-2010",
     categoria: this.categories$[1],
-    utente: this.utenza$[2],
+    utente: this.utenza$[0],
     color: "light"
   },{
     id: 7,
@@ -124,66 +128,79 @@ export class PostService {
   //-------------------Array di Commenti-----------------------------------
   private commenti$: CommentiModel[] = [{
     id: 1,
-  post: this.postAll$[2],
+  post: this.postAll$[1],
   utente: this.utenza$[0],
   data: "12-06-2012",
   commento: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute ",
+  },
+    {
+      id: 2,
+      post: this.postAll$[1],
+      utente: this.utenza$[1],
+      data: "11-05-2012",
+      commento: " ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud Lorem  exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute ",
+    },{
+      id: 3,
+      post: this.postAll$[1],
+      utente: this.utenza$[2],
+      data: "11-10-2012",
+      commento: "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute ",
+    },{
+      id: 4,
+      post: this.postAll$[0],
+      utente: this.utenza$[0],
+      data: "12-06-2012",
+      commento: "Laoreet non curabitur gravida arcu ac tortor dignissim. Quis vel eros donec ac odio tempor orci dapibus ultrices. In hac habitasse platea dictumst quisque sagittis. At in tellus integer feugiat scelerisque varius morbi. Sit amet mattis vulputate enim nulla aliquet porttitor lacus. Vitae auctor eu augue ut lectus arcu bibendum at varius. Tempor orci eu ",
+    },
+    {
+      id: 5,
+      post: this.postAll$[0],
+      utente: this.utenza$[1],
+      data: "11-05-2012",
+      commento: " feugiat scelerisque varius morbi. Sit amet mattis vulputate enim nulla aliquet porttitor lacus. Vitae auctor eu augue ut lectus arcu bibendum at varius. Tempor orci eu",
+    },{
+      id: 6,
+      post: this.postAll$[4],
+      utente: this.utenza$[2],
+      data: "11-10-2012",
+      commento: "eros donec ac odio tempor orci dapibus ultrices. In hac habitasse platea dictumst quisque sagittis. At in tellus integer feugiat scelerisque varius morbi. Sit amet mattis vulputate enim nulla aliquet porttitor lacus. Vitae auctor eu augue ut lectus arcu bibendum at varius. Tempor orci eu",
+    },{
+      id: 7,
+      post: this.postAll$[5],
+      utente: this.utenza$[1],
+      data: "11-10-2012",
+      commento: "eros donec ac odio tempor orci dapibus ultrices. In hac habitasse platea dictumst quisque sagittis. At in tellus integer feugiat scelerisque varius morbi. Sit amet mattis vulputate enim nulla aliquet porttitor lacus. Vitae auctor eu augue ut lectus arcu bibendum at varius. Tempor orci eu",
+    },{
+      id: 8,
+      post: this.postAll$[5],
+      utente: this.utenza$[2],
+      data: "11-10-2012",
+      commento: "eros donec ac odio tempor orci dapibus ultrices. In hac habitasse platea dictumst quisque sagittis. At in tellus integer feugiat scelerisque varius morbi. Sit amet mattis vulputate enim nulla aliquet porttitor lacus. Vitae auctor eu augue ut lectus arcu bibendum at varius. Tempor orci eu",
+    },
+];
+  //-------------------Array di Follower o piu semplicemente i Preferiti-----------------------------------
+
+  private followers$: FollowerModel[] = [{
+    id: 1,
+  utente: this.utenza$[0],
+  post: this.postAll$[2],
+  follow: true
   },{
     id: 2,
+    utente: this.utenza$[0],
     post: this.postAll$[1],
-    utente: this.utenza$[1],
-    data: "10-07-2012",
-    commento: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute ",
+    follow: true
   },{
     id: 3,
-    post: this.postAll$[1],
     utente: this.utenza$[0],
-    data: "17-12-2012",
-    commento: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute ",
-  },{
-    id: 4,
     post: this.postAll$[3],
-    utente: this.utenza$[3],
-    data: "12-12-2012",
-    commento: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute ",
-  },{
-    id: 5,
-    post: this.postAll$[5],
-    utente: this.utenza$[3],
-    data: "01-02-2012",
-    commento: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute ",
-  },{
-    id: 6,
-    post: this.postAll$[5],
-    utente: this.utenza$[0],
-    data: "02-06-2012",
-    commento: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute ",
-  },{
-    id: 7,
-    post: this.postAll$[1],
-    utente: this.utenza$[0],
-    data: "20-06-2012",
-    commento: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute ",
-  },{
-    id: 8,
-    post: this.postAll$[2],
-    utente: this.utenza$[3],
-    data: "25-10-2013",
-    commento: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute ",
-  },{
-    id: 9,
-    post: this.postAll$[3],
-    utente: this.utenza$[0],
-    data: "20-01-2013",
-    commento: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute ",
-  },{
-    id: 10,
-    post: this.postAll$[1],
-    utente: this.utenza$[3],
-    data: "25-12-2013",
-    commento: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute ",
+    follow: true
   }
-];
+  ];
+
+
+
+  //-------------------Array di Follower o piu semplicemente i Preferiti-----------------------------------
 
 
   //-------------------Array di Commenti-----------------------------------
@@ -228,23 +245,50 @@ export class PostService {
   //-------------------metodi commenti by post
 
 
-  getCommentByPost(idPost: number): Observable<CommentiModel[]>{
+  getCommentByPost(idPost: number): Observable<CommentiModel[]> {
     let localComment: CommentiModel[] = [];
 
-    for(let entry of this.commenti$){
+    for (let entry of this.commenti$) {
 
-      if (idPost === entry.post.id){
-          localComment.push(entry);
+      if (idPost === entry.post.id) {
+        localComment.push(entry);
       }
 
     }
-        if (localComment.length <= 0){
-          console.log("spiacenti nessun commento per questo post");
-          return  null;
-        } else
-          return  of (localComment);
+    this.totCommenti = localComment.length;
+
+    return of(localComment);
   }
 
   //-------------------metodi commenti by post
+  //-------------------metodi dei miei post inizializzo l utente il primo se non glielo passo in futuro passero quello autenticato
+
+  getMyPost(sessionUser:Utente = this.utenza$[0]): Observable<PostModel[]>{
+      let myPost$: PostModel[] = [];
+      for(let entry of this.postAll$){
+        if (entry.utente.id === sessionUser.id){
+          myPost$.push(entry);
+        }
+      }
+      return of(myPost$);
+  }
+
+getUtenteSession(sessionUser:Utente = this.utenza$[0]): Utente{
+    return sessionUser;
+}
+
+            //follower
+
+  getMyFollower(sessionUser:Utente = this.utenza$[0]): Observable<PostModel[]>{
+    let myfollower: PostModel[] = [];
+    for (let entry of this.followers$){
+      if (entry.utente.id === sessionUser.id){
+        console.log(entry.post);
+        myfollower.push(entry.post);
+      }
+    }
+    return of(myfollower);
+  }
+  //-------------------metodi dei miei post
 
 }

@@ -14,14 +14,13 @@ export class PostdetailPage implements OnInit {
 
   private idPost: number;
   private detailPost: PostModel;
-  private commenti: CommentiModel[];
+  private totcom: number;
 
   constructor(private  router: Router,private service: PostService,private navCtrl: NavController) {
 
     this.idPost = this.router.getCurrentNavigation().extras.state.id;
     console.log(this.idPost);
     this.getSinglePost();
-    //this.getComment(this.idPost);
   }
 
   ngOnInit() {
@@ -35,10 +34,10 @@ export class PostdetailPage implements OnInit {
     });
   }
 
-  getComment(id: number){
-    this.service.getCommentByPost(id).subscribe(result =>{
-      this.commenti = result;
-    });
+  getCountCommenti(): number{
+    this.totcom = this.service.totCommenti ;
+    console.log(this.totcom);
+    return this.totcom;
   }
 
   goBack(){

@@ -7,6 +7,8 @@
   "CANCEL_BUTTON": "Cancel",
   "DELETE_BUTTON": "Delete",
   "REGISTER_BUTTON": "Regiser now",
+  "GO_TO": "Go To",
+  "TEXT_1": "Enhance your Bindware experience by adding, editing and following posts ...",
 
   "LOGIN_TITLE": "Login",
   "LOGIN_ERROR_TITLE": "Login error",
@@ -26,6 +28,8 @@
   "DETAILS": "Details",
   "CREATED_BY": "Created by",
   "COMMENTS" : "Comments",
+  "PREFERENCES": "Favorites",
+  "UNFOLLOW": "Unfollow",
 
 
   "PROFILO_MENU": "Profile",

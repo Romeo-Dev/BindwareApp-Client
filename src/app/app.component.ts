@@ -1,24 +1,58 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
-import { Platform } from '@ionic/angular';
-import { SplashScreen } from '@ionic-native/splash-screen/ngx';
-import { StatusBar } from '@ionic-native/status-bar/ngx';
+import {NavController, Platform} from '@ionic/angular';
+import {SplashScreen} from '@ionic-native/splash-screen/ngx';
+import {StatusBar} from '@ionic-native/status-bar/ngx';
 import {LinguaService} from './services/lingua.service';
+import {UtenteService} from './services/utente.service';
 import {TranslateService} from '@ngx-translate/core';
+import {Utente} from './model/utente.model';
+import {BehaviorSubject} from 'rxjs';
+
 
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html'
 })
-export class AppComponent {
-  constructor(
-    private platform: Platform,
-    private splashScreen: SplashScreen,
-    private statusBar: StatusBar,
-    private translate: TranslateService,
-    private linguaService: LinguaService
-  ) {
+export class AppComponent implements OnInit {
+
+  private utente$: BehaviorSubject<Utente>;
+
+  constructor(private platform: Platform,
+              private splashScreen: SplashScreen,
+              private linguaService: LinguaService,
+              private utenteService: UtenteService,
+              private translate: TranslateService,
+              private navController: NavController,
+              private statusBar: StatusBar) {
     this.initializeApp();
+  }
+
+  ngOnInit(): void {
+    this.utente$ = this.utenteService.getUtente();
+    this.navController.navigateRoot('tabs');
+  }
+
+  profilo() {
+    this.navController.navigateForward('profilo');
+  }
+
+  imieipost(){
+    this.navController.navigateForward('imieipost');
+  }
+
+  rivenditore(){
+    this.navController.navigateForward('rivenditore');
+  }
+
+
+  openPage(url: string) {
+    this.navController.navigateForward(url);
+  }
+
+  logout() {
+    this.utenteService.logout();
+    this.navController.navigateRoot('migliori');
   }
 
   initializeApp() {

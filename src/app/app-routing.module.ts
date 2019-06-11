@@ -5,6 +5,9 @@ const routes: Routes = [
   { path: '', redirectTo: 'tabs', pathMatch: 'full' },
   { path: 'login', loadChildren: './pages/login/login.module#LoginPageModule' },
   { path: 'tabs', loadChildren: './pages/tabs/tabs.module#TabsPageModule' },
+  { path: 'profilo', loadChildren: './pages/profilo/profilo.module#ProfiloPageModule' },
+  { path: 'imieipost', loadChildren: './pages/imieipost/imieipost.module#ImieipostPageModule' },
+  { path: 'rivenditore', loadChildren: './pages/rivenditore/rivenditore.module#RivenditorePageModule' },
 ];
 
 @NgModule({

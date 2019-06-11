@@ -1,3 +1,96 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-split-pane>
+    <ion-menu>
+      <ion-header>
+        <ion-toolbar color="secondary">
+          <ion-item>
+            <ion-label>
+              <ion-text>
+                <h1><strong>username</strong></h1>
+              </ion-text>
+              <ion-text>
+                <h3>ruolo</h3>
+              </ion-text>
+            </ion-label>
+          </ion-item>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="bg-profile">
+        <ion-list>
+          <ion-menu-toggle auto-hide="false">
+            <ion-item  detail="true" (click)="imieipost()">
+              <ion-icon name="notifications-outline"></ion-icon>
+              <ion-label>{{'MIEI_POST' | translate}}</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-menu-toggle auto-hide="false" >
+            <ion-item detail="true" (click)="rivenditore()">
+              <ion-icon name="appstore"></ion-icon>
+              <ion-label>{{'RIVENDITORE_MENU' | translate}}</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-menu-toggle auto-hide="false" >
+            <ion-item detail="true" (click)="profilo()">
+              <ion-icon name="contact"></ion-icon>
+              <ion-label>{{'PROFILO_MENU' | translate}}</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-menu-toggle auto-hide="false" >
+            <ion-item detail="true" (click)="logout()">
+              <ion-icon name="log-out"></ion-icon>
+              <ion-label>{{'LOGOUT_MENU' | translate}}</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet main></ion-router-outlet>
+  </ion-split-pane>
 </ion-app>
+
+
+
+<!--
+<ion-app>
+  <ion-split-pane>
+    <ion-menu &lt;!&ndash;*ngIf="(utente$ | async) as utente"&ndash;&gt;>
+    <ion-header>
+      <ion-toolbar color="secondary" class="user-profile">
+        <ion-item>
+          <ion-label>
+            <ion-text color="light">
+              <h1><strong>&lt;!&ndash; {{utente.cognome + ' ' + utente.nome}}&ndash;&gt; cognome e nome</strong></h1>
+            </ion-text>
+            <ion-text color="light">
+              <h3>&lt;!&ndash;{{utente.ruolo | uppercase}}&ndash;&gt; ruolo</h3>
+            </ion-text>
+            <ion-menu-toggle auto-hide="false">
+              <ion-button fill="solid" size="small" color="light" (click)="profilo()">
+                <ion-icon name="contact"></ion-icon>{{'PROFILO_MENU' | translate}}</ion-button>
+              <ion-button fill="solid" size="small" color="light" (click)="logout()">
+                <ion-icon name="log-out"></ion-icon>{{'LOGOUT_MENU' | translate}}</ion-button>
+            </ion-menu-toggle>
+          </ion-label>
+        </ion-item>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="bg-profile">
+      <ion-list>
+        <ion-menu-toggle auto-hide="false" *ngFor="let studente of menuStudenti">
+          <ion-item [routerLink]="[studente.url]" (click)="openPage(studente.url)" [hidden]="utente.ruolo=='docente'" detail="true">
+            <ion-icon slot="start" [name]="studente.icon" color="black"></ion-icon>
+            <ion-label>{{studente.title | translate}}</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle auto-hide="false" *ngFor="let docente of menuDocenti">
+          <ion-item [routerLink]="[docente.url]" (click)="openPage(docente.url)" [hidden]="utente.ruolo=='studente'" detail="true">
+            <ion-icon slot="start" [name]="docente.icon" color="black"></ion-icon>
+            <ion-label>{{docente.title | translate}}</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+    </ion-menu>
+    <ion-router-outlet main></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>-->

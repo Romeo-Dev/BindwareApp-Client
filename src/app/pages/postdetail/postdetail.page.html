@@ -1,0 +1,93 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-back-button slot="start"  (click)="goBack()"></ion-back-button>
+    <ion-title>{{"POST"|translate}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+      <!--cARICO I DATI INERENTI AL SINGOLO POST QUINDI SINGOLA DISCUSSIONE -->
+    <ion-item>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="6">
+            <ion-text color="secondary">
+              <ion-icon name="person" size="medium"></ion-icon> : {{this.detailPost.utente.username}}
+            </ion-text>
+          </ion-col>
+          <ion-col size="6">
+            <ion-text color="secondary">
+              <ion-icon name="calendar" size="medium"></ion-icon> : {{this.detailPost.data}}
+            </ion-text>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  <ion-item>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12"> <ion-text color="primary">
+          <h2>
+          {{this.detailPost.titolo}}
+          </h2>
+        </ion-text>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">
+          <ion-text color="secondary">
+            <h4>
+            {{this.detailPost.descr}}
+          </h4>
+          </ion-text>
+        </ion-col>
+      </ion-row>
+      <div class="flex-items">
+        <ion-row>
+          <ion-col size="12">
+            <ion-text color="secondary">
+              <h5 float-right><ion-icon name="arrow-dropdown-circle" color="tertiary"></ion-icon> {{"COMMENTS"| translate}} : 55</h5>
+            </ion-text>
+          </ion-col>
+        </ion-row>
+      </div>
+    </ion-grid>
+  </ion-item>
+  <!--cARICO I DATI INERENTI AL SINGOLO POST QUINDI SINGOLA DISCUSSIONE -->
+
+  <!-- Iniziano le Card di un commento -->
+
+    <ion-card color="primary" class="ion-margin-top">
+      <ion-card-header>
+        <ion-card-subtitle><ion-text color="tertiary"><ion-icon name="person" size="medium"></ion-icon> : Utente B</ion-text></ion-card-subtitle>
+        <ion-card-subtitle><ion-text color="tertiary"><ion-icon name="calendar" size="medium"></ion-icon> : YY-MM-GG</ion-text></ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content>
+        Keep close to Nature's heart... and break clear away, once in awhile,
+        and climb a mountain or spend a week in the woods. Wash your spirit clean.
+      </ion-card-content>
+    </ion-card>
+
+
+    <ion-card color="primary" class="ion-margin-top">
+      <ion-card-header>
+        <ion-card-subtitle><ion-text color="tertiary"><ion-icon name="person" size="medium"></ion-icon> : Utente B</ion-text></ion-card-subtitle>
+        <ion-card-subtitle><ion-text color="tertiary"><ion-icon name="calendar" size="medium"></ion-icon> : YY-MM-GG</ion-text></ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content>
+        Keep close to Nature's heart... and break clear away, once in awhile,
+        and climb a mountain or spend a week in the woods. Wash your spirit clean.
+      </ion-card-content>
+    </ion-card>
+
+
+  <!-- fab placed to the bottom end -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="tertiary">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>

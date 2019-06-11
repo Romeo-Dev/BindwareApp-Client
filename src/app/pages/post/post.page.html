@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-back-button slot="start"  (click)="goBack()"></ion-back-button>
+    <ion-title>{{"POST"|translate}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card color="primary" *ngFor="let post of this.service.getAllPostByCategory(this.categoria)| async">
+    <ion-card-header>
+      <ion-card-subtitle><ion-text color="tertiary">{{post.categoria.nome}}</ion-text></ion-card-subtitle>
+      <ion-card-title>{{post.titolo}}</ion-card-title>
+      <ion-card-subtitle><ion-text color="tertiary">{{"CREATED_BY"|translate}} : {{post.utente.username}}</ion-text></ion-card-subtitle>
+      <ion-card-subtitle><ion-text color="tertiary">Data : {{post.data}}</ion-text></ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12">
+      {{post.descr|slice: 0:250}} <ion-icon name="barcode" color="tertiary" size="small"></ion-icon>
+          </ion-col>
+        </ion-row>
+        <ion-row class="ion-align-items-center">
+          <ion-col>
+      <ion-button color="tertiary" (click)="goToDetail(post.id)">{{"DETAILS"|translate}}</ion-button>
+          </ion-col>
+          <ion-col >
+         <h3 float-end><ion-icon name="star" color="{{post.color}}" size="large"></ion-icon></h3>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- fab placed to the bottom end -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="tertiary">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

@@ -19,6 +19,14 @@
   "USERNAME_REQUIRED": "Username required",
   "PASSWORD_REQUIRED": "Password required",
 
+  "DUMMY": "Work in progress",
+
+  "CATEGORIES": "Select category",
+  "POSTS": "Posts",
+  "DETAILS": "Details",
+  "CREATED_BY": "Created by",
+  "COMMENTS" : "Comments",
+
 
   "PROFILO_MENU": "Profile",
   "LOGOUT_MENU": "Logout",

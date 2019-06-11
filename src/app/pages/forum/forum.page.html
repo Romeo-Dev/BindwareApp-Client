@@ -1,5 +1,23 @@
 
 
 <ion-content>
+  <ion-card color="tertiary">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-text color="primary" margin-bottom text-center>
+          <h2>{{"CATEGORIES"|translate}}</h2>
+        </ion-text>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  </ion-card>
 
+    <!-- Insert (click) event che porta in post -->
+  <ion-item detail *ngFor="let category of this.service.getAllCategories() | async" (click)="goToPost(category.id)">
+    <ion-label>
+      {{category.nome}}
+    </ion-label>
+    <ion-icon name="{{category.icon}}" size="large" slot="start" color="primary"></ion-icon>
+  </ion-item>
 </ion-content>

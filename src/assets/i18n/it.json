@@ -8,18 +8,34 @@
   "DELETE_BUTTON": "Elimina",
   "UPDATE_BUTTON": "Modifica",
   "REGISTER_BUTTON": "Registrati",
+  "REGISTER_TITLE": "Registrazione",
+  "LINK": "Link",
+  "LINK_REQUIRED": "Link obbligatorio",
+  "FATTURAZIONE": "Indirizzo fatturazione",
+  "FATTURAZIONE_REQUIRED": "Indirizzo fatturazione obbligatorio",
+  "PARTITAIVA": "Partita iva",
+  "PARTITAIVA_REQUIRED": "Partita iva obbligatoria",
 
   "LOGIN_TITLE": "Login",
   "LOGIN_ERROR_TITLE": "Errore Login",
   "LOGIN_ERROR_SUB_TITLE": "Username e/o password errate!",
 
+  "REGISTER_ERROR_TITLE": "Errore Registrazione",
+  "REGISTER_ERROR_SUB_TITLE": "Username e/o password già esistenti!",
+
   "PAGINA_COSTRUZIONE": "Pagina in costruzione!!!!!",
 
   "USERNAME": "Username",
+  "EMAIL": "Email",
   "PASSWORD": "Password",
-  "TELEFONO": "Telefono",
+  "PASSWORD_CONFIRM": "Conferma password",
   "USERNAME_REQUIRED": "Username obbligatorio",
-  "PASSWORD_REQUIRED": "Password obbligatorio",
+  "PASSWORD_REQUIRED": "Password obbligatoria",
+  "EMAIL_REQUIRED": "Email obbligatoria",
+  "RUOLO_UTENTE": "Ruolo Utente",
+  "RUOLOUTENTE_REQUIRED": "Ruolo Utente obbligatorio",
+  "UTENTE_NORMALE": "Utente Normale",
+  "RIVENDITORE": "Rivenditore",
 
   "DUMMY": "Pagina non disponibile",
 

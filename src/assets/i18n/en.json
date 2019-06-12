@@ -7,6 +7,7 @@
   "CANCEL_BUTTON": "Cancel",
   "DELETE_BUTTON": "Delete",
   "REGISTER_BUTTON": "Regiser now",
+  "REGISTER_TITLE": "Register",
 
   "LOGIN_TITLE": "Login",
   "LOGIN_ERROR_TITLE": "Login error",
@@ -16,8 +17,24 @@
 
   "USERNAME": "Username",
   "PASSWORD": "Password",
+  "EMAIL": "Email",
+  "PASSWORD_CONFIRM": "Confirm password",
   "USERNAME_REQUIRED": "Username required",
   "PASSWORD_REQUIRED": "Password required",
+  "EMAIL_REQUIRED": "Email Required",
+
+  "REGISTER_ERROR_TITLE": "Register Error",
+  "REGISTER_ERROR_SUB_TITLE": "Username and/or password already taken!",
+  "LINK": "Link",
+  "LINK_REQUIRED": "Link required",
+  "FATTURAZIONE": "Indirizzo fatturazione",
+  "FATTURAZIONE_REQUIRED": "Indirizzo fatturazione required",
+  "PARTITAIVA": "Partita iva",
+  "PARTITAIVA_REQUIRED": "Partita iva required",
+  "RUOLO_UTENTE": "User Role",
+  "RUOLOUTENTE_REQUIRED": "User Role required",
+  "UTENTE_NORMALE": "Normal User",
+  "RIVENDITORE": "Seller",
 
   "DUMMY": "Work in progress",
 

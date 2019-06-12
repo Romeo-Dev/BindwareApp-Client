@@ -33,19 +33,6 @@ export class AppComponent implements OnInit {
     this.navController.navigateRoot('tabs');
   }
 
-  profilo() {
-    this.navController.navigateForward('profilo');
-  }
-
-  imieipost(){
-    this.navController.navigateForward('imieipost');
-  }
-
-  rivenditore(){
-    this.navController.navigateForward('rivenditore');
-  }
-
-
   openPage(url: string) {
     this.navController.navigateForward(url);
   }

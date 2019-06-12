@@ -2,8 +2,8 @@
   <ion-split-pane>
     <ion-menu>
       <ion-header>
-        <ion-toolbar color="secondary">
-          <ion-item>
+        <ion-toolbar>
+          <ion-item color="tertiary">
             <ion-label>
               <ion-text>
                 <h1><strong>username</strong></h1>
@@ -18,21 +18,33 @@
       <ion-content class="bg-profile">
         <ion-list>
           <ion-menu-toggle auto-hide="false">
-            <ion-item  detail="true" (click)="imieipost()">
+            <ion-item  detail="true" (click)="openPage('imieipost')">
               <ion-icon name="notifications-outline"></ion-icon>
               <ion-label>{{'MIEI_POST' | translate}}</ion-label>
             </ion-item>
           </ion-menu-toggle>
           <ion-menu-toggle auto-hide="false" >
-            <ion-item detail="true" (click)="rivenditore()">
+            <ion-item detail="true" (click)="openPage('rivenditore')">
               <ion-icon name="appstore"></ion-icon>
               <ion-label>{{'RIVENDITORE_MENU' | translate}}</ion-label>
             </ion-item>
           </ion-menu-toggle>
           <ion-menu-toggle auto-hide="false" >
-            <ion-item detail="true" (click)="profilo()">
+            <ion-item detail="true" (click)="openPage('profilo')">
               <ion-icon name="contact"></ion-icon>
               <ion-label>{{'PROFILO_MENU' | translate}}</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-menu-toggle auto-hide="false" >
+            <ion-item detail="true" (click)="openPage('registrazione')">
+              <ion-icon name="log-out"></ion-icon>
+              <ion-label>{{'REGISTER_BUTTON' | translate}}</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-menu-toggle auto-hide="false" >
+            <ion-item detail="true" (click)="openPage('login')">
+              <ion-icon name="log-out"></ion-icon>
+              <ion-label>{{'LOGIN_TITLE' | translate}}</ion-label>
             </ion-item>
           </ion-menu-toggle>
           <ion-menu-toggle auto-hide="false" >

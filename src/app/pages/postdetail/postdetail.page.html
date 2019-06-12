@@ -46,7 +46,7 @@
         <ion-row>
           <ion-col size="12">
             <ion-text color="secondary">
-              <h5 float-right><ion-icon name="arrow-dropdown-circle" color="tertiary"></ion-icon> {{"COMMENTS"| translate}} : 55</h5>
+              <h5 float-right><ion-icon name="arrow-dropdown-circle" color="tertiary"></ion-icon> {{"COMMENTS"| translate}} : {{this.getCountCommenti()}}</h5>
             </ion-text>
           </ion-col>
         </ion-row>
@@ -57,28 +57,14 @@
 
   <!-- Iniziano le Card di un commento -->
 
-    <ion-card color="primary" class="ion-margin-top">
+    <ion-card color="primary" class="ion-margin-top" *ngFor="let comment of this.service.getCommentByPost(this.idPost)| async">
       <ion-card-header>
-        <ion-card-subtitle><ion-text color="tertiary"><ion-icon name="person" size="medium"></ion-icon> : Utente B</ion-text></ion-card-subtitle>
-        <ion-card-subtitle><ion-text color="tertiary"><ion-icon name="calendar" size="medium"></ion-icon> : YY-MM-GG</ion-text></ion-card-subtitle>
+        <ion-card-subtitle><ion-text color="tertiary"><ion-icon name="person" size="medium"></ion-icon> : {{this.comment.utente.username}}</ion-text></ion-card-subtitle>
+        <ion-card-subtitle><ion-text color="tertiary"><ion-icon name="calendar" size="medium"></ion-icon> : {{this.comment.data}}</ion-text></ion-card-subtitle>
       </ion-card-header>
 
       <ion-card-content>
-        Keep close to Nature's heart... and break clear away, once in awhile,
-        and climb a mountain or spend a week in the woods. Wash your spirit clean.
-      </ion-card-content>
-    </ion-card>
-
-
-    <ion-card color="primary" class="ion-margin-top">
-      <ion-card-header>
-        <ion-card-subtitle><ion-text color="tertiary"><ion-icon name="person" size="medium"></ion-icon> : Utente B</ion-text></ion-card-subtitle>
-        <ion-card-subtitle><ion-text color="tertiary"><ion-icon name="calendar" size="medium"></ion-icon> : YY-MM-GG</ion-text></ion-card-subtitle>
-      </ion-card-header>
-
-      <ion-card-content>
-        Keep close to Nature's heart... and break clear away, once in awhile,
-        and climb a mountain or spend a week in the woods. Wash your spirit clean.
+        {{this.comment.commento}}
       </ion-card-content>
     </ion-card>
 

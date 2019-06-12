@@ -7,7 +7,7 @@
   "CANCEL_BUTTON": "Annulla",
   "DELETE_BUTTON": "Elimina",
   "UPDATE_BUTTON": "Modifica",
-  "REGISTER_BUTTON": "Registrati",
+
   "REGISTER_TITLE": "Registrazione",
   "LINK": "Link",
   "LINK_REQUIRED": "Link obbligatorio",
@@ -15,6 +15,10 @@
   "FATTURAZIONE_REQUIRED": "Indirizzo fatturazione obbligatorio",
   "PARTITAIVA": "Partita iva",
   "PARTITAIVA_REQUIRED": "Partita iva obbligatoria",
+
+  "GO_TO": "Vai a",
+  "TEXT_1": "Migliora la tua esperienza Bindware aggiungendo, modificando e seguendo post...",
+
 
   "LOGIN_TITLE": "Login",
   "LOGIN_ERROR_TITLE": "Errore Login",
@@ -45,6 +49,8 @@
   "DETAILS": "Dettagli",
   "CREATED_BY": "Creato da",
   "COMMENTS" : "Commenti",
+  "PREFERENCES": "Preferiti",
+  "UNFOLLOW": "Non seguire",
 
   "PROFILO_MENU": "Profilo",
   "LOGOUT_MENU": "Esci",

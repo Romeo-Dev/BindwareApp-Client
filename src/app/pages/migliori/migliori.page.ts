@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {NavController} from "@ionic/angular";
+import {AssettoService} from "../../services/assetto.service";
 
 @Component({
   selector: 'app-migliori',
@@ -8,13 +9,10 @@ import {NavController} from "@ionic/angular";
 })
 export class MiglioriPage implements OnInit {
 
-  constructor(private navCtrl: NavController) { }
+  constructor(private navCtrl: NavController, private service: AssettoService) { }
 
   ngOnInit() {
   }
 
-  goToLogin(){
-    this.navCtrl.navigateForward('login');
-  }
 
 }

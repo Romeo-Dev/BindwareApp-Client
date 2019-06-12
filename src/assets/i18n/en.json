@@ -19,7 +19,7 @@
   "LOGIN_ERROR_SUB_TITLE": "Username and/or password Wrong!",
 
   "PAGINA_COSTRUZIONE": "Page under construction!!!!!",
-
+  "REGISTER_BUTTON": "Register",
   "USERNAME": "Username",
   "PASSWORD": "Password",
   "EMAIL": "Email",
@@ -32,10 +32,10 @@
   "REGISTER_ERROR_SUB_TITLE": "Username and/or password already taken!",
   "LINK": "Link",
   "LINK_REQUIRED": "Link required",
-  "FATTURAZIONE": "Indirizzo fatturazione",
-  "FATTURAZIONE_REQUIRED": "Indirizzo fatturazione required",
-  "PARTITAIVA": "Partita iva",
-  "PARTITAIVA_REQUIRED": "Partita iva required",
+  "FATTURAZIONE": "Billing address",
+  "FATTURAZIONE_REQUIRED": "Billing address required",
+  "PARTITAIVA": "VAT number",
+  "PARTITAIVA_REQUIRED": "VAT number required",
   "RUOLO_UTENTE": "User Role",
   "RUOLOUTENTE_REQUIRED": "User Role required",
   "UTENTE_NORMALE": "Normal User",
@@ -43,6 +43,7 @@
 
   "DUMMY": "Work in progress",
 
+  "BENCHMARK_IBRIDO": "Hybrid Benchmark: ",
   "CATEGORIES": "Select category",
   "POSTS": "Posts",
   "DETAILS": "Details",

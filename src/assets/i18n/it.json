@@ -19,7 +19,7 @@
   "GO_TO": "Vai a",
   "TEXT_1": "Migliora la tua esperienza Bindware aggiungendo, modificando e seguendo post...",
 
-
+"REGISTER_BUTTON": "Registrati",
   "LOGIN_TITLE": "Login",
   "LOGIN_ERROR_TITLE": "Errore Login",
   "LOGIN_ERROR_SUB_TITLE": "Username e/o password errate!",
@@ -43,7 +43,7 @@
 
   "DUMMY": "Pagina non disponibile",
 
-
+  "BENCHMARK_IBRIDO": "Benchmark Ibrido: ",
   "CATEGORIES": "Seleziona Categoria",
   "POSTS": "Post",
   "DETAILS": "Dettagli",

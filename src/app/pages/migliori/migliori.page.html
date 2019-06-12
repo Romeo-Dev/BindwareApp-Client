@@ -1,5 +1,30 @@
 
 
+
 <ion-content>
-i migliori post
+    <ion-card color="primary"  *ngFor="let assett of this.service.getAllBestRated() | async">
+        <ion-card-header>
+            <ion-card-subtitle><ion-text color="tertiary">amd</ion-text></ion-card-subtitle>
+            <ion-card-title>{{assett.nome_assetto}}</ion-card-title>
+            <ion-card-subtitle><ion-text color="tertiary"> {{'CREATED_BY' | translate}} {{assett.utente.username}}</ion-text></ion-card-subtitle>
+            <ion-card-subtitle><ion-text color="tertiary" float-left>{{'BENCHMARK_IBRIDO' | translate}} {{assett.benchmark_ibrido}}</ion-text></ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+            <ion-grid>
+                <ion-row>
+                    <ion-col>
+                        <ion-button color="tertiary" float-left>{{"DETAILS"|translate}}</ion-button>
+                    </ion-col>
+
+                <ion-col>
+                    <h3 float-end><ion-icon name="star" color="tertiary" size="large" *ngIf="assett.voto_medio > 0"></ion-icon></h3>
+                    <h3 float-end><ion-icon name="star" color="tertiary" size="large" *ngIf="assett.voto_medio > 1"></ion-icon></h3>
+                    <h3 float-end><ion-icon name="star" color="tertiary" size="large" *ngIf="assett.voto_medio > 2"></ion-icon></h3>
+                    <h3 float-end><ion-icon name="star" color="tertiary" size="large" *ngIf="assett.voto_medio > 3"></ion-icon></h3>
+                    <h3 float-end><ion-icon name="star" color="tertiary" size="large" *ngIf="assett.voto_medio > 4"></ion-icon></h3>
+                </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-card-content>
+    </ion-card>
 </ion-content>

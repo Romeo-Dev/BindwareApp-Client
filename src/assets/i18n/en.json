@@ -51,6 +51,7 @@
   "COMMENTS" : "Comments",
   "PREFERENCES": "Favorites",
   "UNFOLLOW": "Unfollow",
+  "FORUM_INTERFACE": "Forum Interface",
 
 
   "PROFILO_MENU": "Profile",
@@ -74,5 +75,7 @@
   "RIVENDITORE_MENU": "Seller Interface",
   "MIEI_POST": "My Posts",
   "IMIEIPOST_TITOLO": "My Posts",
-  "RIVENDITORE_TITOLO": "Seller"
+  "RIVENDITORE_TITOLO": "Seller",
+  "I_MIEI_PRODOTTI": "My Products",
+  "PRICE": "Price"
 }

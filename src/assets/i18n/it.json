@@ -51,6 +51,7 @@
   "COMMENTS" : "Commenti",
   "PREFERENCES": "Preferiti",
   "UNFOLLOW": "Non seguire",
+  "FORUM_INTERFACE": "Gestione Forum",
 
   "PROFILO_MENU": "Profilo",
   "LOGOUT_MENU": "Esci",
@@ -72,6 +73,8 @@
   "RIVENDITORE_MENU": "Interfaccia Rivenditore",
   "MIEI_POST": "I miei Post",
   "IMIEIPOST_TITOLO": "I miei Post",
-  "RIVENDITORE_TITOLO": "Rivenditore"
+  "RIVENDITORE_TITOLO": "Rivenditore",
+  "I_MIEI_PRODOTTI": "Miei prodotti",
+  "PRICE": "Prezzo"
 
 }

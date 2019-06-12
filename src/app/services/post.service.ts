@@ -283,7 +283,6 @@ getUtenteSession(sessionUser:Utente = this.utenza$[0]): Utente{
     let myfollower: PostModel[] = [];
     for (let entry of this.followers$){
       if (entry.utente.id === sessionUser.id){
-        console.log(entry.post);
         myfollower.push(entry.post);
       }
     }

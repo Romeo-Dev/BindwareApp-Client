@@ -1,8 +1,7 @@
 
 
 <ion-content>
-  <ion-card color="tertiary">
-  <ion-grid>
+  <ion-grid style="background: #FECB00;">
     <ion-row>
       <ion-col>
         <ion-text color="primary" margin-bottom text-center>
@@ -11,7 +10,7 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-  </ion-card>
+
 
     <!-- Insert (click) event che porta in post -->
   <ion-item detail *ngFor="let category of this.service.getAllCategories() | async" (click)="goToPost(category.id)">

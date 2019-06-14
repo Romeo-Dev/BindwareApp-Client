@@ -6,13 +6,15 @@ export class CPUModel extends ComponentModel{
     core: number;
     frequenza: string;
     wattaggio: number;
-    benchmark_cpu: number;
+    benchmark_cpu?: number;
 
-    constructor(idc:number,marc: string,serieC: string,mod: string,riv: Utente,sim:number,freq:string,wat:number,bench:number,sok:string){
-        super(idc,marc,serieC,mod,riv,sim);
-        this.socket = sok;
-        this.frequenza = freq;
-        this.wattaggio = wat;
-        this.benchmark_cpu = bench;
-        }
+
+    constructor(id: number, marca: string, serie: string, modello: string, immagine: String, rivenditore: Utente, prezzo: number, socket: string, core: number, frequenza: string, wattaggio: number, benchmark_cpu: number) {
+        super(id, marca, serie, modello, immagine, rivenditore, prezzo);
+        this.socket = socket;
+        this.core = core;
+        this.frequenza = frequenza;
+        this.wattaggio = wattaggio;
+        this.benchmark_cpu = benchmark_cpu;
+    }
 }

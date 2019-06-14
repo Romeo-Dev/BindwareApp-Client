@@ -2,18 +2,29 @@
 
 
 <ion-content>
+    <ion-grid style="background: #FECB00;">
+        <ion-row>
+            <ion-col>
+                <ion-text color="primary" margin-bottom text-center>
+                    <h2>{{'MIGLIORI_ASSETTI' | translate}}</h2>
+                </ion-text>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+
     <ion-card color="primary"  *ngFor="let assett of this.service.getAllBestRated() | async">
         <ion-card-header>
-            <ion-card-subtitle><ion-text color="tertiary">amd</ion-text></ion-card-subtitle>
+            <ion-card-subtitle float-end><ion-text color="tertiary">{{assett.famiglia_cpu}}</ion-text></ion-card-subtitle>
             <ion-card-title>{{assett.nome_assetto}}</ion-card-title>
             <ion-card-subtitle><ion-text color="tertiary"> {{'CREATED_BY' | translate}} {{assett.utente.username}}</ion-text></ion-card-subtitle>
-            <ion-card-subtitle><ion-text color="tertiary" float-left>{{'BENCHMARK_IBRIDO' | translate}} {{assett.benchmark_ibrido}}</ion-text></ion-card-subtitle>
+            <ion-card-subtitle><ion-text float-left>{{'BENCHMARK_IBRIDO' | translate}} {{assett.benchmark_ibrido}}</ion-text></ion-card-subtitle>
         </ion-card-header>
         <ion-card-content>
             <ion-grid>
-                <ion-row>
+                <ion-row class="ion-align-items-center">
                     <ion-col>
-                        <ion-button color="tertiary" float-left>{{"DETAILS"|translate}}</ion-button>
+                        <ion-button color="tertiary" float-left (click)="goToDetail(assett.id)">{{"DETAILS"|translate}}</ion-button>
                     </ion-col>
 
                 <ion-col>

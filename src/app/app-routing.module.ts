@@ -14,6 +14,8 @@ const routes: Routes = [
   { path: 'postdetail', loadChildren: './pages/postdetail/postdetail.module#PostdetailPageModule' },
   { path: 'dummy', loadChildren: './pages/dummy/dummy.module#DummyPageModule' },
   { path: 'registrazione', loadChildren: './pages/registrazione/registrazione.module#RegistrazionePageModule' },
+  { path: 'assettodetail', loadChildren: './pages/assettodetail/assettodetail.module#AssettodetailPageModule' },
+  { path: 'componentedetail', loadChildren: './pages/componentedetail/componentedetail.module#ComponentedetailPageModule' },
 ];
 
 @NgModule({

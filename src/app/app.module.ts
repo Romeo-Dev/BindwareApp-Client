@@ -12,6 +12,8 @@ import {IonicStorageModule} from '@ionic/storage';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {PopovercommentPageModule} from './pages/popovercomment/popovercomment.module';
+import {ModalpostPageModule} from './pages/modalpost/modalpost.module';
 
 // Carico il loader delle translate
 
@@ -22,7 +24,10 @@ export function createTranslateLoader(http: HttpClient) {
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(),
+  imports: [BrowserModule,
+    ModalpostPageModule,
+    PopovercommentPageModule,
+    IonicModule.forRoot(),
       HttpClientModule,
     IonicStorageModule.forRoot({
       name: '__mydb',

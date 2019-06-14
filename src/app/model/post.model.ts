@@ -7,7 +7,7 @@ export class PostModel {
     descr: string;
     data: string;
     categoria: CategoriaModel;
-    color: string;
+    color?: string;
     utente: Utente;
 
     //manca Assetto per il momento

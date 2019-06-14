@@ -49,10 +49,10 @@
           <ion-item-option style="background: #02A6DF" (click)="goToDetail(this.mypost.id)">
             <ion-text color="tertiary"><ion-icon name="log-in"></ion-icon>{{"GO_TO"| translate | uppercase}}</ion-text>
           </ion-item-option>
-          <ion-item-option color="tertiary">
+          <ion-item-option color="tertiary" (click)="deletePost()">
             <ion-text color="dark"><ion-icon name="brush"></ion-icon>{{"UPDATE_BUTTON"| translate | uppercase}}</ion-text>
           </ion-item-option>
-          <ion-item-option color="danger">
+          <ion-item-option color="danger" (click)="deletePost()">
             <ion-icon name="trash"></ion-icon>{{"DELETE_BUTTON"| translate | uppercase}}
           </ion-item-option>
         </ion-item-options>
@@ -86,7 +86,7 @@
           <ion-item-option style="background: #02A6DF" (click)="goToDetail(this.follow.id)">
             <ion-text color="tertiary"><ion-icon name="log-in"></ion-icon>{{"GO_TO"| translate | uppercase}}</ion-text>
           </ion-item-option>
-          <ion-item-option color="secondary">
+          <ion-item-option color="secondary" (click)="deletePost()">
             <ion-text color="tertiary"><ion-icon name="star-outline"></ion-icon>{{"UNFOLLOW"| translate | uppercase}}</ion-text>
           </ion-item-option>
         </ion-item-options>
@@ -97,7 +97,7 @@
 
   <!-- fab placed to the bottom end -->
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button color="tertiary">
+    <ion-fab-button color="tertiary" (click)="openModalCreatePost()">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>

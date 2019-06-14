@@ -1,0 +1,55 @@
+<ion-content no-padding>
+  <!--           LISTA DEI POST CREATI DALL UTENTE      -->
+  <ion-grid style="background: #FECB00;">
+    <ion-row>
+      <ion-col>
+        <ion-text color="primary" margin-bottom text-center>
+          <h2>{{"CREATE_POST"|translate}} <img src="assets/img/book.jpg" alt="icona associata" style="height: 8%;width: 8%"></h2>
+        </ion-text>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div style="background: #383a3e; height: 1%; width: 100%"></div>
+
+  <ion-list no-padding [formGroup]="postForm">
+    <ion-item-group>
+      <ion-item-divider color="tertiary">
+        <ion-label class="ion-margin-start"><ion-icon name="list"></ion-icon>{{"CATEGORIES"|translate}}</ion-label>
+      </ion-item-divider>
+
+      <ion-item >
+        <ion-label color="primary">{{"CATEGORY"|translate}}</ion-label>
+        <ion-select value="---" formControlName="drop" okText="{{'DONE_BUTTON'|translate}}" cancelText="{{'CANCEL_BUTTON'|translate}}">
+          <ion-select-option  value='{{drop.id}}' *ngFor="let drop of this.service.getAllCategories()|async">{{drop.nome}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-item-group>
+
+    <ion-item-group>
+      <ion-item-divider color="tertiary">
+        <ion-label class="ion-margin-start"><ion-icon name="add"></ion-icon> {{"OPEN_DISCUSSION"|translate}}</ion-label>
+      </ion-item-divider>
+
+      <ion-item >
+        <ion-label color="primary">{{"TITLE"| translate}} :</ion-label>
+        <ion-input type="text" formControlName="title" color="primary" placeholder="{{'INSERT_BUTTON'|translate}} {{'TITLE'|translate}}..."></ion-input>
+      </ion-item>
+      <ion-item >
+        <ion-label color="primary" position="floating">{{"DESC"|translate}}</ion-label>
+        <ion-textarea color="primary" formControlName="desc" cols="12" placeholder="{{'INSERT_BUTTON'|translate}} {{'DESC'|translate}}..."></ion-textarea>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">{{"DATE"|translate}}</ion-label>
+        <ion-datetime displayFormat="DD/MM/YYYY" formControlName="datepost" min="1994-03-14" max="2012-12-09" placeholder="{{'INSERT_BUTTON'|translate}} {{'DATE'|translate}}..."></ion-datetime>
+      </ion-item>
+    </ion-item-group>
+  </ion-list>
+
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+  <ion-item color="success" button [disabled]="!postForm.valid" (click)="createPost()"><ion-icon name="add" class="ion-margin-start"></ion-icon>{{"INSERT_BUTTON"|translate}}</ion-item>
+  <ion-item color="danger" button (click)="closeModal()"><ion-icon name="close" class="ion-margin-start"></ion-icon>{{"CANCEL_BUTTON"|translate}}</ion-item>
+  </ion-toolbar>
+</ion-footer>

@@ -210,6 +210,16 @@ export class PostService {
     return of(this.categories$);
   }
 
+  getCategoryById(id: number):CategoriaModel{
+    let search: CategoriaModel;
+    for (let entry of this.categories$){
+      if (entry.id === id){
+        search = entry;
+      }
+    }
+    return search;
+  }
+
   //-------------metodi dei post from category
   getAllPostByCategory(id: number): Observable<PostModel[]> {
     let localPost: PostModel[] =[];
@@ -235,9 +245,11 @@ export class PostService {
         singlePost = entry;
         return of (singlePost);
       }
-
     }
+  }
 
+  insertIntoPost(mypost: PostModel){
+    this.postAll$.push(mypost);
   }
   //-------------------metodi di Detail Post
 
@@ -260,7 +272,13 @@ export class PostService {
     return of(localComment);
   }
 
+  addComment(commento: CommentiModel){
+    this.commenti$.push(commento);
+  }
+
   //-------------------metodi commenti by post
+
+
   //-------------------metodi dei miei post inizializzo l utente il primo se non glielo passo in futuro passero quello autenticato
 
   getMyPost(sessionUser:Utente = this.utenza$[0]): Observable<PostModel[]>{

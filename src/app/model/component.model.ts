@@ -6,17 +6,19 @@ export class ComponentModel  {
     serie: string;
     modello: string;
     dimensione?: string;
-    image?: Blob;
+    //image?: Blob;
+    immagine?: String;
     rivenditore: Utente;
     prezzo: number;
 
-    constructor(idc:number,marc: string,serieC: string,mod: string,riv: Utente,sim:number){
-        this.id = idc;
-        this.marca = marc;
-        this.serie = serieC;
-        this.modello = mod;
-        this.rivenditore = riv;
-        this.prezzo = sim;
 
+    constructor(id: number, marca: string, serie: string, modello: string, immagine: String, rivenditore: Utente, prezzo: number) {
+        this.id = id;
+        this.marca = marca;
+        this.serie = serie;
+        this.modello = modello;
+        this.immagine = immagine;
+        this.rivenditore = rivenditore;
+        this.prezzo = prezzo;
     }
 }

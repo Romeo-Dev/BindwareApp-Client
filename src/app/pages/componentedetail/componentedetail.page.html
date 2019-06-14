@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-back-button slot="start"  (click)="goBack()"></ion-back-button>
+    <ion-title>{{"DETTAGLI_COMPONENTE" | translate}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid style="background: #FECB00;">
+    <ion-row>
+      <ion-col>
+        <ion-text text-center>
+          <h1><strong>{{detailComponente.marca}} {{detailComponente.serie}} {{detailComponente.modello}}</strong></h1>
+        </ion-text>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+  <img src="{{detailComponente.immagine}}" alt="img not found">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

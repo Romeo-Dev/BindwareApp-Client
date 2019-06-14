@@ -44,7 +44,6 @@
 
   "DUMMY": "Work in progress",
 
-  "BENCHMARK_IBRIDO": "Hybrid Benchmark: ",
   "CATEGORIES": "Select category",
   "CATEGORY": "Category",
   "OPEN_DISCUSSION": "Open Discussion",
@@ -79,6 +78,21 @@
   "MIGLIORI_TAB": "Best Rated",
   "RICERCA_TAB": "Search",
   "ASSETTO_TAB": "Assett",
+  "MIGLIORI_ASSETTI": "Best Rated Assets",
+  "DETTAGLI_ASSETTO": "Assett Details",
+  "SEZIONE_BENCHMARKS": "Benchmarks Section",
+  "CPU":  "CPU",
+  "MOBO": "MotherBoard",
+  "RAM": "RAM",
+  "GPU": "GPU",
+  "ALIMENTATORE": "Power Supply",
+  "DISCO": "Disk",
+  "CASE": "Case",
+
+  "BENCHMARK_CPU": "CPU: ",
+  "BENCHMARK_GPU": "GPU: ",
+  "BENCHMARK_IBRIDO": "Hybrid Benchmark: ",
+  "DETTAGLI_COMPONENTE": "Component Details",
 
   "RIVENDITORE_MENU": "Seller Interface",
   "MIEI_POST": "My Posts",

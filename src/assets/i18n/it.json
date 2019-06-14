@@ -44,7 +44,7 @@
 
   "DUMMY": "Pagina non disponibile",
 
-  "BENCHMARK_IBRIDO": "Benchmark Ibrido: ",
+
   "CATEGORIES": "Seleziona Categoria",
   "CATEGORY": "Categoria",
   "OPEN_DISCUSSION": "Apro Discussione",
@@ -60,6 +60,20 @@
   "PREFERENCES": "Preferiti",
   "UNFOLLOW": "Non seguire",
   "FORUM_INTERFACE": "Gestione Forum",
+  "SEZIONE_BENCHMARKS": "Sezione Benchmarks",
+  "CPU":  "CPU",
+  "MOBO": "Scheda Madre",
+  "RAM": "RAM",
+  "GPU": "GPU",
+  "ALIMENTATORE": "Alimentatore",
+  "DISCO": "Disco",
+  "CASE": "Case",
+
+  "BENCHMARK_CPU": "CPU: ",
+  "BENCHMARK_GPU": "GPU: ",
+  "BENCHMARK_IBRIDO": "Benchmark Ibrido: ",
+  "DETTAGLI_COMPONENTE": "Dettagli Componente",
+
 
   "PROFILO_MENU": "Profilo",
   "LOGOUT_MENU": "Esci",
@@ -77,6 +91,8 @@
   "MIGLIORI_TAB": "Migliori",
   "RICERCA_TAB": "Ricerca",
   "ASSETTO_TAB": "Assetto",
+  "MIGLIORI_ASSETTI": "Migliori Assetti",
+  "DETTAGLI_ASSETTO": "Dettagli Assetto",
 
   "RIVENDITORE_MENU": "Interfaccia Rivenditore",
   "MIEI_POST": "I miei Post",

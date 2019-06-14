@@ -1,0 +1,163 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-back-button slot="start"  (click)="goBack()"></ion-back-button>
+        <ion-title>{{"DETTAGLI_ASSETTO"|translate}}</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid style="background: #FECB00;">
+        <ion-row>
+            <ion-col>
+                <ion-text text-center>
+                    <h1><strong>{{detailAssetto.nome_assetto}}</strong></h1>
+                </ion-text>
+                <ion-text text-center>
+                    <p>{{'CREATED_BY' | translate}} {{detailAssetto.utente.username}}</p>
+                </ion-text>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+    <ion-item (click)="goToComponentDetail(detailAssetto.cpu.id, detailAssetto.id)">
+        <ion-thumbnail slot="start">
+            <img src="{{detailAssetto.cpu.immagine}}" width="56px" height="56px" alt="img not found">
+        </ion-thumbnail>
+        <ion-label text-wrap>
+            <ion-text color="primary">
+                <h3>{{"CPU" | translate}}</h3>
+            </ion-text>
+            <ion-text color="secondary">
+                <p>{{detailAssetto.cpu.marca}} {{detailAssetto.cpu.serie}} {{detailAssetto.cpu.modello}}</p>
+            </ion-text>
+            <ion-text color="secondary">
+                <h3 float-end>{{"PRICE"| translate}}: {{detailAssetto.cpu.prezzo}}$</h3>
+            </ion-text>
+        </ion-label>
+    </ion-item>
+
+
+    <ion-item (click)="goToComponentDetail(detailAssetto.mobo.id, detailAssetto.id)">
+        <ion-thumbnail slot="start">
+            <img src="{{detailAssetto.mobo.immagine}}" width="56px" height="56px" alt="img not found">
+        </ion-thumbnail>
+        <ion-label text-wrap>
+            <ion-text color="primary">
+                <h3>{{"MOBO" | translate}}</h3>
+            </ion-text>
+            <ion-text color="secondary">
+                <p>{{detailAssetto.mobo.marca}} {{detailAssetto.mobo.serie}} {{detailAssetto.mobo.modello}}</p>
+            </ion-text>
+            <ion-text color="secondary">
+                <h3 float-end>{{"PRICE"| translate}}: {{detailAssetto.mobo.prezzo}}$</h3>
+            </ion-text>
+        </ion-label>
+    </ion-item>
+
+    <ion-item (click)="goToComponentDetail(detailAssetto.ram.id, detailAssetto.id)">
+        <ion-thumbnail slot="start">
+            <img src="{{detailAssetto.ram.immagine}}" width="56px" height="56px" alt="img not found">
+        </ion-thumbnail>
+        <ion-label text-wrap>
+            <ion-text color="primary">
+                <h3>{{"RAM" | translate}}</h3>
+            </ion-text>
+            <ion-text color="secondary">
+                <p>{{detailAssetto.ram.marca}} {{detailAssetto.ram.serie}} {{detailAssetto.ram.modello}}</p>
+            </ion-text>
+            <ion-text color="secondary">
+                <h3 float-end>{{"PRICE"| translate}}: {{detailAssetto.ram.prezzo}}$</h3>
+            </ion-text>
+        </ion-label>
+    </ion-item>
+
+    <ion-item (click)="goToComponentDetail(detailAssetto.gpu.id, detailAssetto.id)">
+        <ion-thumbnail slot="start">
+            <img src="{{detailAssetto.gpu.immagine}}" width="56px" height="56px" alt="img not found">
+        </ion-thumbnail>
+        <ion-label text-wrap>
+            <ion-text color="primary">
+                <h3>{{"GPU" | translate}}</h3>
+            </ion-text>
+            <ion-text color="secondary">
+                <p>{{detailAssetto.gpu.marca}} {{detailAssetto.gpu.serie}} {{detailAssetto.gpu.modello}}</p>
+            </ion-text>
+            <ion-text color="secondary">
+                <h3 float-end>{{"PRICE"| translate}}: {{detailAssetto.gpu.prezzo}}$</h3>
+            </ion-text>
+        </ion-label>
+    </ion-item>
+
+    <ion-item (click)="goToComponentDetail(detailAssetto.alimentatore.id, detailAssetto.id)">
+        <ion-thumbnail slot="start">
+            <img src="{{detailAssetto.alimentatore.immagine}}" width="56px" height="56px" alt="img not found">
+        </ion-thumbnail>
+        <ion-label text-wrap>
+            <ion-text color="primary">
+                <h3>{{"ALIMENTATORE" | translate}}</h3>
+            </ion-text>
+            <ion-text color="secondary">
+                <p>{{detailAssetto.alimentatore.marca}} {{detailAssetto.alimentatore.serie}} {{detailAssetto.alimentatore.modello}}</p>
+            </ion-text>
+            <ion-text color="secondary">
+                <h3 float-end>{{"PRICE"| translate}}: {{detailAssetto.alimentatore.prezzo}}$</h3>
+            </ion-text>
+        </ion-label>
+    </ion-item>
+
+    <ion-item (click)="goToComponentDetail(detailAssetto.disco.id, detailAssetto.id)">
+        <ion-thumbnail slot="start">
+            <img src="{{detailAssetto.disco.immagine}}" width="56px" height="56px" alt="img not found">
+        </ion-thumbnail>
+        <ion-label text-wrap>
+            <ion-text color="primary">
+                <h3>{{"DISCO" | translate}}</h3>
+            </ion-text>
+            <ion-text color="secondary">
+                <p>{{detailAssetto.disco.marca}} {{detailAssetto.disco.serie}} {{detailAssetto.disco.modello}}</p>
+            </ion-text>
+            <ion-text color="secondary">
+                <h3 float-end>{{"PRICE"| translate}}: {{detailAssetto.disco.prezzo}}$</h3>
+            </ion-text>
+        </ion-label>
+    </ion-item>
+
+    <ion-item (click)="goToComponentDetail(detailAssetto.computercase.id, detailAssetto.id)">
+        <ion-thumbnail slot="start">
+            <img src="{{detailAssetto.computercase.immagine}}" width="56px" height="56px" alt="img not found">
+        </ion-thumbnail>
+        <ion-label text-wrap>
+            <ion-text color="primary">
+                <h3>{{"CASE" | translate}}</h3>
+            </ion-text>
+            <ion-text color="secondary">
+                <p>{{detailAssetto.computercase.marca}} {{detailAssetto.computercase.serie}} {{detailAssetto.computercase.modello}}</p>
+            </ion-text>
+            <ion-text color="secondary">
+                <h3 float-end>{{"PRICE"| translate}}: {{detailAssetto.computercase.prezzo}}$</h3>
+            </ion-text>
+        </ion-label>
+    </ion-item>
+
+    <ion-item-divider color="tertiary" >
+        <ion-text color="primary" text-center>
+            <ion-label>
+                <h2>
+                    <ion-icon name="stats" size="medium"></ion-icon> {{"SEZIONE_BENCHMARKS"| translate | uppercase}}
+                </h2>
+            </ion-label>
+        </ion-text>
+    </ion-item-divider>
+
+<!--    <ion-grid>
+        <ion-row>
+            <ion-col size=""><ion-icon name="speedometer" size="large"></ion-icon><ion-text>{{"BENCHMARK_CPU" | translate}} {{detailAssetto.cpu.benchmark_cpu}}</ion-text></ion-col>
+
+            <ion-col size=""><ion-icon name="speedometer" size="large"></ion-icon><ion-text>{{"BENCHMARK_GPU" | translate}} {{detailAssetto.gpu.benchmark_gpu}}</ion-text></ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col size=""><ion-icon name="speedometer" size="large"></ion-icon><ion-text>{{"BENCHMARK_IBRIDO" | translate}} {{detailAssetto.benchmark_ibrido}}</ion-text></ion-col>
+        </ion-row>
+    </ion-grid>
+-->
+</ion-content>

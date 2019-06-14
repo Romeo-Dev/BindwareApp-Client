@@ -7,10 +7,11 @@ export class RAMModel extends ComponentModel{
     capacita: number;
     frequenza: string;
 
-    constructor(idc:number,marc: string,serieC: string,mod: string,riv: Utente,sim:number,tec:string,cap:number,freq:string){
-        super(idc,marc,serieC,mod,riv,sim);
-        this.tecnologia = tec;
-        this.capacita = cap;
-        this.frequenza = freq;
+
+    constructor(id: number, marca: string, serie: string, modello: string, immagine: String, rivenditore: Utente, prezzo: number, tecnologia: string, capacita: number, frequenza: string) {
+        super(id, marca, serie, modello, immagine, rivenditore, prezzo);
+        this.tecnologia = tecnologia;
+        this.capacita = capacita;
+        this.frequenza = frequenza;
     }
 }

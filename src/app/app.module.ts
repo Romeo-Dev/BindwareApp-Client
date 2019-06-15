@@ -14,6 +14,7 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {PopovercommentPageModule} from './pages/popovercomment/popovercomment.module';
 import {ModalpostPageModule} from './pages/modalpost/modalpost.module';
+import {ModalrivenditorePageModule} from './pages/modalrivenditore/modalrivenditore.module';
 
 // Carico il loader delle translate
 
@@ -26,6 +27,7 @@ export function createTranslateLoader(http: HttpClient) {
   entryComponents: [],
   imports: [BrowserModule,
     ModalpostPageModule,
+    ModalrivenditorePageModule,
     PopovercommentPageModule,
     IonicModule.forRoot(),
       HttpClientModule,

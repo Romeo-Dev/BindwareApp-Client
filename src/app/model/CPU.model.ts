@@ -9,7 +9,7 @@ export class CPUModel extends ComponentModel{
     benchmark_cpu?: number;
 
 
-    constructor(id: number, marca: string, serie: string, modello: string, immagine: String, rivenditore: Utente, prezzo: number, socket: string, core: number, frequenza: string, wattaggio: number, benchmark_cpu: number) {
+    constructor(id: number, marca: string, serie: string, modello: string, immagine: String, rivenditore: Utente, prezzo: number, socket: string, core: number, frequenza: string, wattaggio: number, benchmark_cpu: number = 1150) {
         super(id, marca, serie, modello, immagine, rivenditore, prezzo);
         this.socket = socket;
         this.core = core;

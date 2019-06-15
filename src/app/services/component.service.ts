@@ -35,6 +35,9 @@ export class ComponentService {
       new CPUModel(11,"AMD","5 2600","YD2600BBAFBOX","",this.rivenditori$[1],140,"3.4 GHz",100,"1500",95,13006),
       new CPUModel(12,"Intel","i7 6900k","RGB600BOX","",this.rivenditori$[1],255,"4.0 Ghz",100,"3000",98, 14000),
 ];
+
+  private  type$: String[] = ['CPU','RAM'];
+
   constructor() { }
 
 
@@ -59,6 +62,15 @@ export class ComponentService {
 
   }
 
+//--------------interfaccia rivenditore crud
+  getType(): Observable<String[]>{
+    return of(this.type$);
+  }
 
+
+  //---------------add
+    addComponentService(component: ComponentModel){
+      this.component$.push(component);
+    }
 
 }

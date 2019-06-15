@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {NavController} from "@ionic/angular";
+import {ModalController, NavController} from '@ionic/angular';
 import {Utente} from '../../model/utente.model';
 import {ComponentService} from '../../services/component.service';
+import {ModalrivenditorePage} from '../modalrivenditore/modalrivenditore.page';
 
 @Component({
   selector: 'app-rivenditore',
@@ -11,7 +12,7 @@ import {ComponentService} from '../../services/component.service';
 export class RivenditorePage implements OnInit {
   private rivenditoreSession: Utente
 
-  constructor( private navController: NavController,private  service : ComponentService) {
+  constructor( private navController: NavController,private  service : ComponentService,private modal: ModalController) {
     this.rivenditoreSession = this.service.getRivenditoreSession();
   }
 
@@ -22,4 +23,13 @@ export class RivenditorePage implements OnInit {
   ngOnInit() {
   }
 
+    async openModalRivenditore() {
+        const mod = await this.modal.create({
+          component: ModalrivenditorePage,
+          componentProps: {
+            utente: this.rivenditoreSession
+          }
+        });
+        await mod.present();
+    }
 }

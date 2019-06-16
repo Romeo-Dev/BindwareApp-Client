@@ -113,7 +113,106 @@ export class AssettoService{
     ];
 
 
+    //--------------------Array per la famiglia dell assetto sempre nella vista my asseets
+
+    private famiglia: string[] = ['Intel','Amd'];
+
+    //--------------------Array per la famiglia dell assetto sempre nella vista my asseets
+
+
+    //---------------------Array dei miei assetti
+
+    private myassets$: Assetto[] = [{
+        id: 0,
+        famiglia_cpu: this.famiglia[0],
+        utente:  this.utenza$[0],
+        nome_assetto: "myGamingAssett",
+        benchmark_ibrido: 15000,
+        voto_medio: 5,
+        cpu: this.cpu$,
+        mobo:this.mobo$,
+        ram:this.ram$,
+        gpu:this.gpu$,
+        alimentatore:this.alim$,
+        disco:this.disco$,
+        computercase:this.case$,
+        pubblicato: true,
+        completato: true
+    },{
+        id: 1,
+    famiglia_cpu: this.famiglia[1],
+    utente: this.utenza$[0],
+    nome_assetto: "Laboratorio scuola Superiore",
+    completato: false,
+    pubblicato: false,
+    },{
+        id: 2,
+        famiglia_cpu: this.famiglia[0],
+        utente: this.utenza$[0],
+        nome_assetto: "Assetto da casa con Navigazione",
+        completato: true,
+        pubblicato: false,
+    }
+
+    ];
+
+    //---------------------Array dei miei assetti
+
+
+
+
+
     constructor(){}
+
+
+
+    //-----------------metodi della pagina Assetto
+
+    getAssetsByUtenteSession(utente: Utente = this.utenza$[0]): Observable<Assetto[]>{
+        let localAssetti: Assetto[] = [];
+
+        for (let entry of this.myassets$){
+            if (entry.utente === utente){
+                localAssetti.push(entry);
+            }
+        }
+        return  of (localAssetti);
+
+    }
+
+
+
+    getFamily(): Observable<string[]>{
+        return of(this.famiglia);
+    }
+
+    getUtenteSession(user: Utente = this.utenza$[0]): Utente{
+            return user;
+    }
+
+
+    addAsset(newAsset: Assetto) {
+            this.myassets$.push(newAsset);
+    }
+
+    countAssetByUser(utente: Utente = this.utenza$[0]): number{
+
+        let countAssets = 0;
+        for (let entry of this.myassets$){
+            if (entry.utente === utente){
+                countAssets++;
+            }
+        }
+        return countAssets;
+    }
+
+    //-----------------metodi della pagina Assetto
+
+
+
+
+
+
 
     getAllBestRated(): Observable<Assetto[]>{
         return of(this.migliori$);
@@ -174,4 +273,6 @@ export class AssettoService{
         }
 
     }
+
+
 }

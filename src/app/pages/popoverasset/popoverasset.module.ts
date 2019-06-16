@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { AssettoPage } from './assetto.page';
+import { PopoverassetPage } from './popoverasset.page';
 import {TranslateModule} from '@ngx-translate/core';
 
 const routes: Routes = [
   {
     path: '',
-    component: AssettoPage
+    component: PopoverassetPage
   }
 ];
 
@@ -21,8 +21,9 @@ const routes: Routes = [
         FormsModule,
         IonicModule,
         RouterModule.forChild(routes),
-        TranslateModule
+        TranslateModule,
+        ReactiveFormsModule
     ],
-  declarations: [AssettoPage]
+  declarations: [PopoverassetPage]
 })
-export class AssettoPageModule {}
+export class PopoverassetPageModule {}

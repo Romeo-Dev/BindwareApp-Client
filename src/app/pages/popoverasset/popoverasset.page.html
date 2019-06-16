@@ -1,0 +1,24 @@
+
+
+<ion-list no-padding [formGroup]="assetForm">
+    <ion-item color="primary">
+      <ion-input type="text" formControlName="nome" color="tertiary" placeholder="Nome Assetto...."></ion-input>
+    </ion-item>
+    <ion-item-group>
+    <ion-item color="primary">
+
+      <ion-select value="---" placeholder="select" formControlName="select" okText="{{'DONE_BUTTON'|translate}}" cancelText="{{'CANCEL_BUTTON'|translate}}">
+        <ion-select-option  value="{{family}}" *ngFor="let family of this.service.getFamily()|async">{{family}}</ion-select-option>
+      </ion-select>
+
+    </ion-item>
+    </ion-item-group>
+    <ion-item color="success" button (click)="addAsset()" [disabled]="!this.assetForm.valid">
+      <ion-icon name="add" slot="start"></ion-icon>
+      {{"INSERT_BUTTON"|translate}}
+    </ion-item>
+    <ion-item color="danger" button (click)="closePopover()">
+      <ion-icon name="close" slot="start"></ion-icon>
+      {{"CANCEL_BUTTON"|translate}}
+    </ion-item>
+</ion-list>

@@ -13,10 +13,10 @@ export class Assetto {
 	famiglia_cpu: string;
 	utente: Utente;
 	nome_assetto: string;
-	benchmark_ibrido: number;
+	benchmark_ibrido?: number;
 	completato?: boolean;
 	pubblicato?: boolean;
-	voto_medio: number;
+	voto_medio?: number;
 	//vincoli?: Vincoli;
 	cpu?: CPUModel;
 	mobo?:MOBO;

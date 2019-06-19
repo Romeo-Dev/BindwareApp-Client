@@ -10,7 +10,7 @@ import {ComponentModel} from "./component.model";
 
 export class Assetto {
 	id: number;
-	famiglia_cpu: string;
+	famiglia_cpu?: string;
 	utente: Utente;
 	nome_assetto: string;
 	benchmark_ibrido?: number;

@@ -2,9 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {PostModel} from '../../model/post.model';
 import {PostService} from '../../services/post.service';
-import {NavController, PopoverController} from '@ionic/angular';
-import {CommentiModel} from '../../model/commenti.model';
-import {PopovercommentPage} from '../popovercomment/popovercomment.page';
+import {ModalController, NavController, PopoverController} from '@ionic/angular';
+import {ModalMidCommentPage} from '../modal-mid-comment/modal-mid-comment.page';
 
 @Component({
   selector: 'app-postdetail',
@@ -17,7 +16,7 @@ export class PostdetailPage implements OnInit {
   private detailPost: PostModel;
   private totcom: number;
 
-  constructor(private  router: Router,private service: PostService,private navCtrl: NavController,private popCtrl: PopoverController) {
+  constructor(private  router: Router,private service: PostService,private navCtrl: NavController,private modal: ModalController) {
 
     this.idPost = this.router.getCurrentNavigation().extras.state.id;
     console.log(this.idPost);
@@ -45,16 +44,17 @@ export class PostdetailPage implements OnInit {
     this.navCtrl.back();
   }
 
-
-  async  openPopover(ev: Event,post: PostModel){
-      console.log("popover evento partito");
-    const over = await this.popCtrl.create({
-        component: PopovercommentPage,
-        componentProps: {
-          post: post
-        },
-        event: ev
+  async openModelComment(current: PostModel){
+    const mymod = await this.modal.create({
+      component: ModalMidCommentPage,
+      cssClass: 'my-custom-modal-css',
+      componentProps: {
+        post: current
+      }
     });
-    over.present();
+
+    await mymod.present();
   }
+
+
 }

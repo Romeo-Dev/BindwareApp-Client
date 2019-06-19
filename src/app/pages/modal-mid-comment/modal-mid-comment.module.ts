@@ -5,13 +5,13 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { PopoverassetPage } from './popoverasset.page';
+import { ModalMidCommentPage } from './modal-mid-comment.page';
 import {TranslateModule} from '@ngx-translate/core';
 
 const routes: Routes = [
   {
     path: '',
-    component: PopoverassetPage
+    component: ModalMidCommentPage
   }
 ];
 
@@ -21,9 +21,9 @@ const routes: Routes = [
         FormsModule,
         IonicModule,
         RouterModule.forChild(routes),
-        TranslateModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        TranslateModule
     ],
-  declarations: [PopoverassetPage]
+  declarations: [ModalMidCommentPage]
 })
-export class PopoverassetPageModule {}
+export class ModalMidCommentPageModule {}

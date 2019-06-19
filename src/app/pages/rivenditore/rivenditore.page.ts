@@ -32,4 +32,8 @@ export class RivenditorePage implements OnInit {
         });
         await mod.present();
     }
+
+  workin() {
+    this.navController.navigateForward('dummy');
+  }
 }

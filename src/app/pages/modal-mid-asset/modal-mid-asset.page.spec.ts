@@ -1,22 +1,22 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PopoverassetPage } from './popoverasset.page';
+import { ModalMidAssetPage } from './modal-mid-asset.page';
 
-describe('PopoverassetPage', () => {
-  let component: PopoverassetPage;
-  let fixture: ComponentFixture<PopoverassetPage>;
+describe('ModalMidAssetPage', () => {
+  let component: ModalMidAssetPage;
+  let fixture: ComponentFixture<ModalMidAssetPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PopoverassetPage ],
+      declarations: [ ModalMidAssetPage ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PopoverassetPage);
+    fixture = TestBed.createComponent(ModalMidAssetPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

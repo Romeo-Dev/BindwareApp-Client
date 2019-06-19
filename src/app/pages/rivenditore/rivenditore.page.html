@@ -49,13 +49,13 @@
                 </ion-label>
             </ion-item>
             <ion-item-options>
-                <ion-item-option style="background: #02A6DF" >
-                    <ion-text color="tertiary"><ion-icon name="log-in"></ion-icon>{{"GO_TO"| translate | uppercase}}</ion-text>
+                <ion-item-option style="background: #02A6DF" (click)="workin()" >
+                    <ion-text color="tertiary" ><ion-icon name="log-in"></ion-icon>{{"GO_TO"| translate | uppercase}}</ion-text>
                 </ion-item-option>
-                <ion-item-option color="tertiary">
+                <ion-item-option color="tertiary" (click)="workin()">
                     <ion-text color="dark"><ion-icon name="brush"></ion-icon>{{"UPDATE_BUTTON"| translate | uppercase}}</ion-text>
                 </ion-item-option>
-                <ion-item-option color="danger">
+                <ion-item-option color="danger" (click)="workin()">
                     <ion-icon name="trash"></ion-icon>{{"DELETE_BUTTON"| translate | uppercase}}
                 </ion-item-option>
             </ion-item-options>

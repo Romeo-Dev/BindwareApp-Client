@@ -1,22 +1,22 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PopovercommentPage } from './popovercomment.page';
+import { ModalMidCommentPage } from './modal-mid-comment.page';
 
-describe('PopovercommentPage', () => {
-  let component: PopovercommentPage;
-  let fixture: ComponentFixture<PopovercommentPage>;
+describe('ModalMidCommentPage', () => {
+  let component: ModalMidCommentPage;
+  let fixture: ComponentFixture<ModalMidCommentPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PopovercommentPage ],
+      declarations: [ ModalMidCommentPage ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PopovercommentPage);
+    fixture = TestBed.createComponent(ModalMidCommentPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

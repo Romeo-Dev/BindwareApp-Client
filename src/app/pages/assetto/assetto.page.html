@@ -25,27 +25,26 @@
                     </ion-label>
                 </ion-text>
             </ion-item-divider>
-            <ion-item-sliding  *ngFor="let ass of this.service.getAssetsByUtenteSession()| async">
-            <ion-item detail (click)="goToDetail(ass.id)">
-            <ion-label>
-                <h2 >{{ass.nome_assetto}} </h2> <h4 float-end><ion-text color="secondary">{{ass.famiglia_cpu}}</ion-text></h4>
-                <h4 *ngIf="ass.completato === true;else  is_false"><ion-text color="success"><ion-icon name="checkmark-circle"></ion-icon> {{"COMPLETE"|translate}}</ion-text></h4>
-                <ng-template #is_false><h4><ion-text color="warning"><ion-icon name="warning"></ion-icon> {{"COMPLETE"|translate}}</ion-text></h4></ng-template>
-                <h4 *ngIf="ass.pubblicato === true;else not_pubblic"><ion-text color="success"><ion-icon name="checkmark-circle"></ion-icon> {{"PUBLISH"|translate}}</ion-text></h4>
-                <ng-template #not_pubblic><h4><ion-text color="warning"><ion-icon name="warning"></ion-icon> {{"PUBLISH"|translate}}</ion-text></h4></ng-template>
-            </ion-label>
-            <ion-icon name="settings" size="large" slot="start" color="primary"></ion-icon>
-            </ion-item>
-                <ion-item-options>
-                <ion-item-option color="danger" (click)="clearAsset()">
-                    <ion-icon name="trash"></ion-icon>{{"DELETE_BUTTON"| translate | uppercase}}
-                </ion-item-option>
-                </ion-item-options>
-            </ion-item-sliding>
+
+            <ion-item detail *ngFor="let ass of this.service.getAssetsByUtenteSession()| async">
+                    <ion-thumbnail slot="start">
+                        <img src="assets/img/provaassetto.png" alt="">
+                    </ion-thumbnail>
+                    <ion-label>
+                        <h3>{{ass.nome_assetto}}</h3>
+                        <p *ngIf="ass.completato === true;else  is_false"><ion-text color="success"><ion-icon name="checkmark-circle"></ion-icon> {{"COMPLETE"|translate}}</ion-text></p>
+                        <ng-template #is_false><p><ion-text color="warning"><ion-icon name="warning"></ion-icon> {{"COMPLETE"|translate}}</ion-text></p></ng-template>
+                        <p *ngIf="ass.pubblicato === true;else not_pubblic"><ion-text color="success"><ion-icon name="checkmark-circle"></ion-icon> {{"PUBLISH"|translate}}</ion-text></p>
+                        <ng-template #not_pubblic><p><ion-text color="warning"><ion-icon name="warning"></ion-icon> {{"PUBLISH"|translate}}</ion-text></p></ng-template>
+                    </ion-label>
+                    <ion-icon name="construct" color="primary" slot="end"></ion-icon>
+                </ion-item>
+
+
         </ion-item-group>
 
     <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-        <ion-fab-button color="tertiary" (click)="openFormAsset($event,this.userSession)">
+        <ion-fab-button color="tertiary" (click)="open()">
             <ion-icon name="add"></ion-icon>
         </ion-fab-button>
     </ion-fab>

@@ -12,10 +12,10 @@ import {IonicStorageModule} from '@ionic/storage';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
-import {PopovercommentPageModule} from './pages/popovercomment/popovercomment.module';
 import {ModalpostPageModule} from './pages/modalpost/modalpost.module';
 import {ModalrivenditorePageModule} from './pages/modalrivenditore/modalrivenditore.module';
-import {PopoverassetPageModule} from './pages/popoverasset/popoverasset.module';
+import {ModalMidCommentPageModule} from './pages/modal-mid-comment/modal-mid-comment.module';
+import {ModalMidAssetPageModule} from './pages/modal-mid-asset/modal-mid-asset.module';
 
 // Carico il loader delle translate
 
@@ -29,8 +29,8 @@ export function createTranslateLoader(http: HttpClient) {
   imports: [BrowserModule,
     ModalpostPageModule,
     ModalrivenditorePageModule,
-    PopoverassetPageModule,
-    PopovercommentPageModule,
+      ModalMidCommentPageModule,
+      ModalMidAssetPageModule,
     IonicModule.forRoot(),
       HttpClientModule,
     IonicStorageModule.forRoot({

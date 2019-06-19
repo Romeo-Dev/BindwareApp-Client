@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import {AssettoService} from '../../services/assetto.service';
-import {NavController, PopoverController, ToastController} from '@ionic/angular';
+import {ModalController, NavController, PopoverController, ToastController} from '@ionic/angular';
 import {PopoverassetPage} from '../popoverasset/popoverasset.page';
 import {Utente} from '../../model/utente.model';
 import {NavigationExtras, Router} from '@angular/router';
+import {PostModel} from '../../model/post.model';
+import {ModalMidCommentPage} from '../modal-mid-comment/modal-mid-comment.page';
+import {ModalMidAssetPage} from '../modal-mid-asset/modal-mid-asset.page';
 
 @Component({
   selector: 'app-assetto',
@@ -14,7 +17,7 @@ export class AssettoPage implements OnInit {
 
   private userSession: Utente;
 
-  constructor(private service: AssettoService,private navCtrl: NavController,private popCtrl: PopoverController,private toastCtrl: ToastController,private route: Router) { }
+  constructor(private service: AssettoService,private navCtrl: NavController,private modal: ModalController,private toastCtrl: ToastController,private route: Router) { }
 
   ngOnInit() {
     this.userSession = this.service.getUtenteSession();
@@ -25,35 +28,32 @@ export class AssettoPage implements OnInit {
   }
 
 
-  openFormAsset(ev: Event,utente: Utente){
-
+  open(){
     if (this.service.countAssetByUser() > 4){
 
       console.log("Slot assetti pieni");
       this.openToastBlock();
 
     } else {
-
-      console.log("procedo all add assetto");
-      console.log(utente);
-      this.openPopoverAsset(ev,utente);
+      console.log("cerco di entrare in model asset");
+      this.openModelAsset()
 
     }
 
   }
 
-
-
-   async openPopoverAsset(ev: Event,utente: Utente = this.userSession) {
-    const pop = await this.popCtrl.create({
-      component: PopoverassetPage,
-      componentProps:{
-        utente: utente
+  async openModelAsset(){
+    const mymod = await this.modal.create({
+      component: ModalMidAssetPage,
+      componentProps: {
+        utente: this.userSession
       },
-      event: ev
+      cssClass: 'my-custom-modal-css'
     });
-    await pop.present();
+
+    await mymod.present();
   }
+
 
   async  openToastBlock(){
     const toast = await this.toastCtrl.create({

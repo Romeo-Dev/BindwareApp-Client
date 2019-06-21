@@ -6,7 +6,6 @@ import {MOBO} from "./mobo.model";
 import {GPU} from "./gpu.model";
 import {Alimentatore} from "./alimentatore.model";
 import {Case} from "./case.model";
-import {ComponentModel} from "./component.model";
 
 export class Assetto {
 	id: number;
@@ -25,5 +24,7 @@ export class Assetto {
 	alimentatore?: Alimentatore;
 	disco?: Disco;
 	computercase?: Case;
+	wattaggio?: number ;
+	prezzotot?: number ;
 
 }

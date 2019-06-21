@@ -85,7 +85,8 @@
   "BINDWARE_INTERFACE": "Bindware Interface",
   "MANAGE_ASSETS": "Menage Assets",
   "COMPLETE": "Complete",
-  "PUBLISH": "Publish",
+  "PUBLISH": "Published",
+  "PUBLISH_BUTTON": "Public",
 
 
   "SEZIONE_BENCHMARKS": "Benchmarks Section",

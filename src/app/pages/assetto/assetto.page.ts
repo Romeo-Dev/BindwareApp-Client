@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {AssettoService} from '../../services/assetto.service';
 import {ModalController, NavController, PopoverController, ToastController} from '@ionic/angular';
-import {PopoverassetPage} from '../popoverasset/popoverasset.page';
 import {Utente} from '../../model/utente.model';
 import {NavigationExtras, Router} from '@angular/router';
-import {PostModel} from '../../model/post.model';
-import {ModalMidCommentPage} from '../modal-mid-comment/modal-mid-comment.page';
 import {ModalMidAssetPage} from '../modal-mid-asset/modal-mid-asset.page';
+import {ModalsystembuilderPage} from '../modalsystembuilder/modalsystembuilder.page';
+import {Assetto} from '../../model/assetto.model';
 
 @Component({
   selector: 'app-assetto',
@@ -75,18 +74,13 @@ export class AssettoPage implements OnInit {
     toast.present();
   }
 
-  goToDetail(id: number) {
-
-    if (id != 0) {
-      this.navCtrl.navigateForward('dummy');
-    } else {
-
-      let extras: NavigationExtras = {
-        state: {
-          id: id
-        }
-      };
-      this.route.navigate(['assettodetail'], extras);
-    }
+  async openSystemBuilder(ass: Assetto){
+    const system = await this.modal.create({
+      component: ModalsystembuilderPage,
+      componentProps: {
+        asset:ass
+      }
+    });
+    await system.present();
   }
 }

@@ -26,7 +26,7 @@
                 </ion-text>
             </ion-item-divider>
 
-            <ion-item detail *ngFor="let ass of this.service.getAssetsByUtenteSession()| async">
+            <ion-item detail *ngFor="let ass of this.service.getAssetsByUtenteSession()| async" (click)="openSystemBuilder(ass)">
                     <ion-thumbnail slot="start">
                         <img src="assets/img/provaassetto.png" alt="">
                     </ion-thumbnail>

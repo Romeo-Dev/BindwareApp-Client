@@ -17,6 +17,7 @@ import {ModalrivenditorePageModule} from './pages/modalrivenditore/modalrivendit
 import {ModalMidCommentPageModule} from './pages/modal-mid-comment/modal-mid-comment.module';
 import {ModalMidAssetPageModule} from './pages/modal-mid-asset/modal-mid-asset.module';
 import {ModalsystembuilderPageModule} from './pages/modalsystembuilder/modalsystembuilder.module';
+import {ModalMidComponentPartPageModule} from './pages/modal-mid-component-part/modal-mid-component-part.module';
 
 // Carico il loader delle translate
 
@@ -33,6 +34,7 @@ export function createTranslateLoader(http: HttpClient) {
       ModalsystembuilderPageModule,
       ModalMidCommentPageModule,
       ModalMidAssetPageModule,
+    ModalMidComponentPartPageModule,
     IonicModule.forRoot(),
       HttpClientModule,
     IonicStorageModule.forRoot({

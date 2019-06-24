@@ -5,7 +5,7 @@
       <ion-input type="text" formControlName="commento" placeholder="{{'PLACEHOLDER_COMMENT'|translate}}..."></ion-input>
     </ion-item>
     <ion-item>
-    <ion-button color="tertiary"  shape="round" expand="block" style="width: 50%" (click)="addCommento()"><ion-icon name="add"></ion-icon> {{"INSERT_BUTTON"|translate}}</ion-button>
+    <ion-button color="tertiary"  shape="round" expand="block" style="width: 50%" (click)="addCommento()" [disabled]="!commentoForm.valid"><ion-icon name="add"></ion-icon> {{"INSERT_BUTTON"|translate}}</ion-button>
       <ion-button color="danger"  shape="round" expand="block" style="width: 50%" (click)="closeModal()"><ion-icon name="close"></ion-icon> {{"CANCEL_BUTTON"|translate}}</ion-button>
     </ion-item>
   </ion-footer>

@@ -7,6 +7,9 @@ import {RAMModel} from "../model/RAM.model";
 import {CPUModel} from "../model/CPU.model";
 import {MOBO} from "../model/mobo.model";
 import {GPU} from "../model/gpu.model";
+import {Disco} from '../model/disco.model';
+import {Alimentatore} from '../model/alimentatore.model';
+import {Case} from '../model/case.model';
 
 @Injectable({
     providedIn: 'root'
@@ -182,7 +185,9 @@ export class AssettoService{
 
     //-----------------Utility
 
-
+    getListOfComponent(): Observable<ComponentModel[]>{
+        return  of(this.listOfComponent$);
+    }
 
 
     constructor(){}
@@ -299,8 +304,8 @@ export class AssettoService{
 
 
     deleteAssettoCurrent(systemAsset: Assetto):void {
-        console.log('prima del remove assetto '+this.myassets$.length)
-        this.myassets$ = this.myassets$.filter(item => item.id != systemAsset.id)
+        console.log('prima del remove assetto '+this.myassets$.length);
+        this.myassets$ = this.myassets$.filter(item => item.id != systemAsset.id);
         console.log('dopo del remove assetto '+this.myassets$.length);
     }
 
@@ -383,4 +388,119 @@ export class AssettoService{
         AssettoService.initWizard(systemAsset);
         return systemAsset;
     }
+
+
+    getComponentPartAvaiable(part: string): Observable<ComponentModel[]>{
+
+        let avaiable : ComponentModel[] = [];
+
+        switch (part) {
+
+            case 'CPU':{
+                for (let entry of this.listOfComponent$){
+                    if (entry instanceof CPUModel) {
+                        avaiable.push(entry);
+                    }
+                }
+
+                break;
+            }
+            case 'MOBO':{
+                for (let entry of this.listOfComponent$){
+                    if (entry instanceof MOBO) {
+                        avaiable.push(entry);
+                    }
+                }
+
+                break;
+            }
+            case 'RAM':{
+                for (let entry of this.listOfComponent$){
+                    if (entry instanceof RAMModel) {
+                        avaiable.push(entry);
+                    }
+                }
+
+                break;
+            }
+            case 'GPU':{
+                for (let entry of this.listOfComponent$){
+                    if (entry instanceof GPU) {
+                        avaiable.push(entry);
+                    }
+                }
+
+                break;
+            }
+            case 'DISCO':{
+                for (let entry of this.listOfComponent$){
+                    if (entry instanceof Disco) {
+                        avaiable.push(entry);
+                    }
+                }
+
+                break;
+            }
+            case 'ALIM':{
+                for (let entry of this.listOfComponent$){
+                    if (entry instanceof Alimentatore) {
+                        avaiable.push(entry);
+                    }
+                }
+
+                break;
+            }
+            case 'CASE':{
+                for (let entry of this.listOfComponent$){
+                    if (entry instanceof Case) {
+                        avaiable.push(entry);
+                    }
+                }
+
+                break;
+            }
+
+        }
+
+        return of(avaiable);
+
+    }
+
+    static addComponentPartOnMyAsset(systemAsset: Assetto, part: string, componentPart: ComponentModel):void{
+
+        switch (part) {
+            case 'CPU':{
+                systemAsset.cpu = <CPUModel>componentPart;
+                break;
+            }
+            case 'MOBO':{
+                systemAsset.mobo = <MOBO>componentPart;
+                break;
+            }
+            case 'RAM':{
+                systemAsset.ram = <RAMModel>componentPart;
+                break;
+            }
+            case 'GPU':{
+                systemAsset.gpu = <GPU>componentPart;
+                break;
+            }
+            case 'DISCO':{
+                systemAsset.disco = <Disco>componentPart;
+                break;
+            }
+            case 'ALIM':{
+                systemAsset.alimentatore = <Alimentatore>componentPart;
+                break;
+            }
+            case 'CASE':{
+                systemAsset.computercase = <Case>componentPart;
+                break;
+            }
+        }
+        AssettoService.initWizard(systemAsset);
+        return;
+
+    }
+
 }

@@ -44,7 +44,7 @@
       </ion-item-divider>
 
       <!-- Composizione a griglia dell item -->
-      <ion-item *ngIf="this.systemAsset.cpu != null || this.systemAsset.cpu != undefined;else insert_button">
+      <ion-item *ngIf="this.systemAsset.cpu != null || this.systemAsset.cpu != undefined;else button_cpu">
           <ion-thumbnail slot="start">
             <img src="assets/img/empty-folder.png" alt="">
           </ion-thumbnail>
@@ -58,10 +58,10 @@
       <!-- Composizione a griglia dell item -->
 
       <!-- CPU  if bottone o componente-->
-      <ng-template #insert_button>
-      <ion-item >
-      <ion-button color="warning" expand="block" shape="round" style="width: 40%;"><ion-icon name="add-circle-outline"></ion-icon> {{"INSERT_BUTTON"|translate}}</ion-button>
-      </ion-item>
+      <ng-template #button_cpu>
+        <ion-item >
+          <ion-button color="warning" expand="block" shape="round" style="width: 40%;" (click)="openComponentPart('CPU')"><ion-icon name="add-circle-outline"></ion-icon> {{"INSERT_BUTTON"|translate}}</ion-button>
+        </ion-item>
       </ng-template>
     </ion-item-group>
     <!-- CPU -->
@@ -71,7 +71,7 @@
         <ion-label class="ion-margin-start"><ion-icon name="information-circle-outline"></ion-icon> MOBO</ion-label>
       </ion-item-divider>
 
-      <ion-item *ngIf="this.systemAsset.mobo != null || this.systemAsset.mobo != undefined;else insert_button">
+      <ion-item *ngIf="this.systemAsset.mobo != null || this.systemAsset.mobo != undefined;else button_mobo">
         <ion-thumbnail slot="start">
           <img src="assets/img/empty-folder.png" alt="">
         </ion-thumbnail>
@@ -84,9 +84,9 @@
       </ion-item>
 
 
-      <ng-template #insert_button>
+      <ng-template #button_mobo>
         <ion-item >
-          <ion-button color="warning" expand="block" shape="round" style="width: 40%;"><ion-icon name="add-circle-outline"></ion-icon> {{"INSERT_BUTTON"|translate}}</ion-button>
+          <ion-button color="warning" expand="block" shape="round" style="width: 40%;" (click)="openComponentPart('MOBO')"><ion-icon name="add-circle-outline"></ion-icon> {{"INSERT_BUTTON"|translate}}</ion-button>
         </ion-item>
       </ng-template>
     </ion-item-group>
@@ -97,7 +97,7 @@
         <ion-label class="ion-margin-start"><ion-icon name="information-circle-outline"></ion-icon> RAM</ion-label>
       </ion-item-divider>
 
-      <ion-item *ngIf="this.systemAsset.ram != null || this.systemAsset.ram != undefined;else insert_button">
+      <ion-item *ngIf="this.systemAsset.ram != null || this.systemAsset.ram != undefined;else button_ram">
         <ion-thumbnail slot="start">
           <img src="assets/img/empty-folder.png" alt="">
         </ion-thumbnail>
@@ -110,9 +110,9 @@
       </ion-item>
 
 
-      <ng-template #insert_button>
+      <ng-template #button_ram>
         <ion-item >
-          <ion-button color="warning" expand="block" shape="round" style="width: 40%;"><ion-icon name="add-circle-outline"></ion-icon> {{"INSERT_BUTTON"|translate}}</ion-button>
+          <ion-button color="warning" expand="block" shape="round" style="width: 40%;" (click)="openComponentPart('RAM')"><ion-icon name="add-circle-outline"></ion-icon> {{"INSERT_BUTTON"|translate}}</ion-button>
         </ion-item>
       </ng-template>
     </ion-item-group>
@@ -123,7 +123,7 @@
         <ion-label class="ion-margin-start"><ion-icon name="information-circle-outline"></ion-icon> GPU</ion-label>
       </ion-item-divider>
 
-      <ion-item *ngIf="this.systemAsset.gpu != null || this.systemAsset.gpu != undefined;else insert_button">
+      <ion-item *ngIf="this.systemAsset.gpu != null || this.systemAsset.gpu != undefined;else button_gpu">
         <ion-thumbnail slot="start">
           <img src="assets/img/empty-folder.png" alt="">
         </ion-thumbnail>
@@ -136,9 +136,9 @@
       </ion-item>
 
 
-      <ng-template #insert_button>
+      <ng-template #button_gpu>
         <ion-item >
-          <ion-button color="warning" expand="block" shape="round" style="width: 40%;"><ion-icon name="add-circle-outline"></ion-icon> {{"INSERT_BUTTON"|translate}}</ion-button>
+          <ion-button color="warning" expand="block" shape="round" style="width: 40%;" (click)="openComponentPart('GPU')"><ion-icon name="add-circle-outline"></ion-icon> {{"INSERT_BUTTON"|translate}}</ion-button>
         </ion-item>
       </ng-template>
     </ion-item-group>
@@ -149,7 +149,7 @@
         <ion-label class="ion-margin-start"><ion-icon name="information-circle-outline"></ion-icon> DISK</ion-label>
       </ion-item-divider>
 
-      <ion-item *ngIf="this.systemAsset.disco != null || this.systemAsset.disco != undefined;else insert_button">
+      <ion-item *ngIf="this.systemAsset.disco != null || this.systemAsset.disco != undefined;else button_disk">
         <ion-thumbnail slot="start">
           <img src="assets/img/empty-folder.png" alt="">
         </ion-thumbnail>
@@ -158,13 +158,13 @@
           <p>{{this.systemAsset.mobo.serie}}, {{this.systemAsset.disco.modello}}</p>
           <p>{{"PRICE"|translate}}: {{this.systemAsset.disco.prezzo}} €</p>
         </ion-label>
-        <ion-icon name="close-circle" slot="end" color="danger" size="large"></ion-icon>
+        <ion-icon name="close-circle" slot="end" color="danger" size="large" (click)="removeComponentFromAsset('DISCO')"></ion-icon>
       </ion-item>
 
 
-      <ng-template #insert_button>
+      <ng-template #button_disk>
         <ion-item >
-          <ion-button color="warning" expand="block" shape="round" style="width: 40%;"><ion-icon name="add-circle-outline"></ion-icon> {{"INSERT_BUTTON"|translate}}</ion-button>
+          <ion-button color="warning" expand="block" shape="round" style="width: 40%;" (click)="openComponentPart('DISCO')"><ion-icon name="add-circle-outline"></ion-icon> {{"INSERT_BUTTON"|translate}}</ion-button>
         </ion-item>
       </ng-template>
     </ion-item-group>
@@ -175,7 +175,7 @@
         <ion-label class="ion-margin-start"><ion-icon name="information-circle-outline"></ion-icon> POWER</ion-label>
       </ion-item-divider>
 
-      <ion-item *ngIf="this.systemAsset.alimentatore != null || this.systemAsset.alimentatore != undefined;else insert_button">
+      <ion-item *ngIf="this.systemAsset.alimentatore != null || this.systemAsset.alimentatore != undefined;else button_alim">
         <ion-thumbnail slot="start">
           <img src="assets/img/empty-folder.png" alt="">
         </ion-thumbnail>
@@ -184,13 +184,13 @@
           <p>{{this.systemAsset.alimentatore.serie}}, {{this.systemAsset.alimentatore.modello}}</p>
           <p>{{"PRICE"|translate}}: {{this.systemAsset.alimentatore.prezzo}} €</p>
         </ion-label>
-        <ion-icon name="close-circle" slot="end" color="danger" size="large"></ion-icon>
+        <ion-icon name="close-circle" slot="end" color="danger" size="large" (click)="removeComponentFromAsset('ALIM')"></ion-icon>
       </ion-item>
 
 
-      <ng-template #insert_button>
+      <ng-template #button_alim>
         <ion-item >
-          <ion-button color="warning" expand="block" shape="round" style="width: 40%;"><ion-icon name="add-circle-outline"></ion-icon> {{"INSERT_BUTTON"|translate}}</ion-button>
+          <ion-button color="warning" expand="block" shape="round" style="width: 40%;" (click)="openComponentPart('ALIM')"><ion-icon name="add-circle-outline"></ion-icon> {{"INSERT_BUTTON"|translate}}</ion-button>
         </ion-item>
       </ng-template>
     </ion-item-group>
@@ -201,7 +201,7 @@
         <ion-label class="ion-margin-start"><ion-icon name="information-circle-outline"></ion-icon> CASE</ion-label>
       </ion-item-divider>
 
-      <ion-item *ngIf="this.systemAsset.computercase != null || this.systemAsset.computercase != undefined;else insert_button">
+      <ion-item *ngIf="this.systemAsset.computercase != null || this.systemAsset.computercase != undefined;else button_case">
         <ion-thumbnail slot="start">
           <img src="assets/img/empty-folder.png" alt="">
         </ion-thumbnail>
@@ -210,13 +210,13 @@
           <p>{{this.systemAsset.computercase.serie}}, {{this.systemAsset.computercase.modello}}</p>
           <p>{{"PRICE"|translate}}: {{this.systemAsset.computercase.prezzo}} €</p>
         </ion-label>
-        <ion-icon name="close-circle" slot="end" color="danger" size="large"></ion-icon>
+        <ion-icon name="close-circle" slot="end" color="danger" size="large" (click)="removeComponentFromAsset('CASE')"></ion-icon>
       </ion-item>
 
 
-      <ng-template #insert_button>
+      <ng-template #button_case>
         <ion-item >
-          <ion-button color="warning" expand="block" shape="round" style="width: 40%;"><ion-icon name="add-circle-outline"></ion-icon> {{"INSERT_BUTTON"|translate}}</ion-button>
+          <ion-button color="warning" expand="block" shape="round" style="width: 40%;" (click)="openComponentPart('CASE')"><ion-icon name="add-circle-outline"></ion-icon> {{"INSERT_BUTTON"|translate}}</ion-button>
         </ion-item>
       </ng-template>
     </ion-item-group>
@@ -235,8 +235,8 @@
 
 
 <ion-footer>
-  <ion-item color="warning"  button (click)="closeModal()"><ion-icon name="checkmark-circle" class="ion-margin-start"></ion-icon>
-    {{"DONE_BUTTON"|translate}}
+  <ion-item color="warning"  button (click)="closeModal()"><ion-icon name="checkmark-circle" color="success" class="ion-margin-start"></ion-icon>
+    {{"SAVE_BUTTON"|translate}}
   </ion-item>
     <ion-item color="danger"  button (click)="deleteAssettoPresent()"><ion-icon name="trash" class="ion-margin-start"></ion-icon>
       {{"DELETE_BUTTON"|translate}} {{"ASSETTO_TAB"| translate}}
